@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initCategoriesButtons();
-
     }
     //----------------------------------------------------------------------------------------------
     /*
@@ -40,23 +39,30 @@ public class MainActivity extends AppCompatActivity
         addAllButtonsToArray(allCategoriesButtons);
 
 
-        for(final ImageButton categoryButton :allCategoriesButtons)
+        for(final ImageButton categoryButton : allCategoriesButtons)
         {
             categoryButton.setOnClickListener(
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+                           String fullResourceName = getResources().getResourceName(categoryButton.getId());
+                           String categoryName = fullResourceName.substring(fullResourceName.lastIndexOf("_")+1);
+
+
                             Intent startIntent = new Intent(getApplicationContext(), DetailsActivity.class);
 
                             //*******************************************************************
                             //Notice this area:
                             //******   This is broken on purpose, the implementation of details activity need to be changed a bit
-                            startIntent.putExtra(Integer.toString(categoryButton.getId()),categoryButton.getId());
+                            String prefix = "com.gmail.itaital100.";
+                            String finalKey = prefix + categoryName;
+                            startIntent.putExtra(finalKey,categoryButton.getId());
                             //*******************************************************************
 
                             startActivity(startIntent);
                         }
                     });
+
         }
     }
     //----------------------------------------------------------------------------------------------
