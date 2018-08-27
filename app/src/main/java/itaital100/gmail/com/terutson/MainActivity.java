@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,11 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button hw = (Button)findViewById(R.id.btn_hw);
-        Button meeting = (Button)findViewById(R.id.btn_meeting);
-        Button ex = (Button)findViewById(R.id.btn_ex);
-        Button work = (Button)findViewById(R.id.btn_work);
+        ImageButton hw = (ImageButton)findViewById(R.id.btn_hw);
+        ImageButton meeting = (ImageButton)findViewById(R.id.btn_meeting);
+        ImageButton ex = (ImageButton)findViewById(R.id.btn_ex);
+        ImageButton work = (ImageButton)findViewById(R.id.btn_work);
 
+        //setting  listeners
         hw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

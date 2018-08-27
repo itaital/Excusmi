@@ -4,88 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="25dp">
 
-    <Button
-        android:id="@+id/btn_ex"
-        android:layout_width="146dp"
-        android:layout_height="91dp"
-        android:layout_marginBottom="144dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="101dp"
-        android:background="#0F0"
-        android:text="מטלה"
-        android:textSize="24dp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/BackgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_meeting" />
-
-    <Button
-        android:id="@+id/btn_work"
-        android:layout_width="146dp"
-        android:layout_height="91dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
-        android:background="#FFFF0FF0"
-        android:text="עבודה"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_ex"
-        app:layout_constraintTop_toBottomOf="@+id/btn_hw"
-        app:layout_constraintVertical_bias="0.398" />
-
-    <Button
-        android:id="@+id/btn_hw"
-        android:layout_width="148dp"
-        android:layout_height="94dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="128dp"
-        android:background="#00F"
-        android:text="שיעורי בית"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_meeting"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/teruson_bg" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/topLabel"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:background="#FFFF00"
+        android:layout_marginEnd="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="40dp"
+        android:includeFontPadding="true"
         android:text="אני צריך תירוץ ל..."
-        android:textColor="#0000CD"
-        android:textSize="32dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_hw"
+        android:textAppearance="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle"
+        android:textColor="#214886"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_meeting"
-        android:layout_width="147dp"
-        android:layout_height="91dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="128dp"
-        android:background="#F00"
-        android:text="פגישה"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/btn_hw"
-        app:layout_constraintHorizontal_bias="0.228"
+    <LinearLayout
+        android:id="@+id/CatagoriesButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/BackgroundImage"
+        app:layout_constraintTop_toBottomOf="@+id/topLabel">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_meeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                app:srcCompat="@drawable/icon_meeting" />
+
+            <Space
+                android:layout_width="55dp"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_work" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="130dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="130dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_ex" />
+
+            <Space
+                android:layout_width="55dp"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_date" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="130dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="130dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_occasion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_event" />
+
+            <Space
+                android:layout_width="55dp"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/btn_hw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_hw" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="130dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/categoryLabels"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>
