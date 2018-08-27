@@ -70,6 +70,7 @@ public class DetailsActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                //generate new Excuse
                 String newExcuse = "";
                  do{
                      newExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
@@ -78,8 +79,6 @@ public class DetailsActivity extends AppCompatActivity
 
                  myTextBox.setText(newExcuse);
                  currentExcuse = newExcuse;
-
-
             }
         });
     }
