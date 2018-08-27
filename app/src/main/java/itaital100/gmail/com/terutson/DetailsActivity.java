@@ -15,23 +15,26 @@ import itaital100.gmail.com.terutson.ExusesFactory.Category;
 public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
-        Category ActivityCategory;
-        ExusesFactory ef = new ExusesFactory();
-        public int currentExcuseIndex=-1;
-        String excuse;
+        public int    currentExcuseIndex=-1;
+        String        currentExcuse;
+        Category      ActivityCategory;
+        ExusesFactory myExcuseFactory = new ExusesFactory();
+
+
     //Components:
-        TextView tv;
-        Button copy;
-        Button forward;
+        TextView myTextBox;
+        Button copy_Button;
+        Button forward_Button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        tv = (TextView) findViewById(R.id.txt_teruson);
+        myTextBox = (TextView) findViewById(R.id.txt_teruson);
         ActivityCategory = getExcuseCategoryType();
-        excuse = ef.generateNewExcuse(ActivityCategory,currentExcuseIndex);
-        tv.setText(excuse);
+        currentExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
+        myTextBox.setText(currentExcuse);
         initCopyButton();
         initforwardButton();
     }
@@ -42,12 +45,12 @@ public class DetailsActivity extends AppCompatActivity
          */
     private void initCopyButton()
     {
-        copy = (Button) findViewById(R.id.btn_copy);
-        copy.setOnClickListener(new View.OnClickListener() {
+        copy_Button = (Button) findViewById(R.id.btn_copy);
+        copy_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("text label", tv.getText());
+                ClipData clip = ClipData.newPlainText("text label", myTextBox.getText());
                 clipboard.setPrimaryClip(clip);
 
                 Toast.makeText(getApplicationContext(),"הטקסט הועתק",Toast.LENGTH_SHORT).show();
@@ -62,13 +65,19 @@ public class DetailsActivity extends AppCompatActivity
        */
     private void initforwardButton()
     {
-        forward = (Button) findViewById(R.id.btn_forward);
-        forward.setOnClickListener(new View.OnClickListener() {
+        forward_Button = (Button) findViewById(R.id.btn_forward);
+        forward_Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                 while(excuse == ef.generateNewExcuse(ActivityCategory,currentExcuseIndex));
+            public void onClick(View view)
+            {
+                String newExcuse = "";
+                 do{
+                     newExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
+                 }
+                 while(currentExcuse == newExcuse);
 
-                 tv.setText(excuse);
+                 myTextBox.setText(newExcuse);
+                 currentExcuse = newExcuse;
 
 
             }
