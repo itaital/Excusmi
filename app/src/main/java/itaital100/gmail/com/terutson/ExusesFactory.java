@@ -4,11 +4,9 @@ public class ExusesFactory
 {
     public enum Category{Meeting,Work,Ex,Date,Occassion,Homework}
 
-
     String[] Exuces_meeting = {
 
     };
-
 
     String[] Exuces_work = {
 
@@ -63,10 +61,5 @@ public class ExusesFactory
             }
             return  ""; //mock output;
     }
-
-
-
-
-
 
 }

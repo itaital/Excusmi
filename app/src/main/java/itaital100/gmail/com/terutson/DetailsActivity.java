@@ -18,15 +18,15 @@ public class DetailsActivity extends AppCompatActivity
         Category ActivityCategory;
         int currentExcuseIndex;
     //Components:
-        TextView tv;
-        Button copy;
+        TextView excuse_textbox;
+        Button copyButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
-        tv = (TextView) findViewById(R.id.txt_teruson);
+        excuse_textbox = (TextView) findViewById(R.id.txt_teruson);
         ActivityCategory = getExcuseCategoryType();
         initCopyButton();
     }
@@ -37,12 +37,12 @@ public class DetailsActivity extends AppCompatActivity
          */
     private void initCopyButton()
     {
-        copy = (Button) findViewById(R.id.btn_copy);
-        copy.setOnClickListener(new View.OnClickListener() {
+        copyButton = (Button) findViewById(R.id.btn_copy);
+        copyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("text label", tv.getText());
+                ClipData clip = ClipData.newPlainText("text label", excuse_textbox.getText());
                 clipboard.setPrimaryClip(clip);
 
                 Toast.makeText(getApplicationContext(),"Text pasted",Toast.LENGTH_SHORT).show();
@@ -67,7 +67,6 @@ public class DetailsActivity extends AppCompatActivity
         }
         if(getIntent().hasExtra("com.gmail.itaital100.ex"))
         {
-
             return Category.Ex;
         }
         if(getIntent().hasExtra("com.gmail.itaital100.work"))
