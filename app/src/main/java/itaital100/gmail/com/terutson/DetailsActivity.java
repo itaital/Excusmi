@@ -16,19 +16,24 @@ public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
         Category ActivityCategory;
-        int currentExcuseIndex;
+        ExusesFactory ef = new ExusesFactory();
+        public int currentExcuseIndex=-1;
+        String excuse;
     //Components:
-        TextView excuse_textbox;
-        Button copyButton;
-
+        TextView tv;
+        Button copy;
+        Button forward;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        excuse_textbox = (TextView) findViewById(R.id.txt_teruson);
+        tv = (TextView) findViewById(R.id.txt_teruson);
         ActivityCategory = getExcuseCategoryType();
+        excuse = ef.generateNewExcuse(ActivityCategory,currentExcuseIndex);
+        tv.setText(excuse);
         initCopyButton();
+        initforwardButton();
     }
 //-----------------------------------------------------------------------
       /*
@@ -37,19 +42,39 @@ public class DetailsActivity extends AppCompatActivity
          */
     private void initCopyButton()
     {
-        copyButton = (Button) findViewById(R.id.btn_copy);
-        copyButton.setOnClickListener(new View.OnClickListener() {
+        copy = (Button) findViewById(R.id.btn_copy);
+        copy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("text label", excuse_textbox.getText());
+                ClipData clip = ClipData.newPlainText("text label", tv.getText());
                 clipboard.setPrimaryClip(clip);
 
-                Toast.makeText(getApplicationContext(),"Text pasted",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"הטקסט הועתק",Toast.LENGTH_SHORT).show();
             }
         });
     }
 //-------------------------------------------------------------------------------------------
+
+    //-----------------------------------------------------------------------
+      /*
+           show next excuse that is different then the previous
+       */
+    private void initforwardButton()
+    {
+        forward = (Button) findViewById(R.id.btn_forward);
+        forward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 while(excuse == ef.generateNewExcuse(ActivityCategory,currentExcuseIndex));
+
+                 tv.setText(excuse);
+
+
+            }
+        });
+    }
+    //-------------------------------------------------------------------------------------------
     /*
         Checks if this activity got any messege about the type of the category that it is meant for.
         Output: if messege is valid -> returns the category type
@@ -67,6 +92,7 @@ public class DetailsActivity extends AppCompatActivity
         }
         if(getIntent().hasExtra("com.gmail.itaital100.ex"))
         {
+
             return Category.Ex;
         }
         if(getIntent().hasExtra("com.gmail.itaital100.work"))
