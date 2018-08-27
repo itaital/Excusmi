@@ -51,13 +51,10 @@ public class MainActivity extends AppCompatActivity
 
                             Intent startIntent = new Intent(getApplicationContext(), DetailsActivity.class);
 
-                            //*******************************************************************
-                            //Notice this area:
-                            //******   This is broken on purpose, the implementation of details activity need to be changed a bit
+
                             String prefix = "com.gmail.itaital100.";
                             String finalKey = prefix + categoryName;
                             startIntent.putExtra(finalKey,categoryButton.getId());
-                            //*******************************************************************
 
                             startActivity(startIntent);
                         }
