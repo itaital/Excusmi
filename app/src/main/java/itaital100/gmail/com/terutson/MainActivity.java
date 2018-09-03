@@ -1,11 +1,13 @@
 package itaital100.gmail.com.terutson;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.content.DialogInterface;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,32 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initCategoriesButtons(); // init all of the catagories button and store them inside allCatagoriesButton arrayList
+
+        if(openingForTheFirstTime())
+        {
+            openFirstTimeDiaolog();
+        }
+    }
+    //----------------------------------------------------------------------------------------------
+    boolean openingForTheFirstTime()
+    {
+        return false;
+    }
+    //----------------------------------------------------------------------------------------------
+    void openFirstTimeDiaolog()
+    {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setMessage("שלום לכם! " + "\n" +"אנו מודים לכם שבחרתם להשתמש באפליקציה שלנו ומקווים שהיא תועיל לכם מאד" +
+                            "\n"+"עם זאת, אין אנו אחראים על כל נזק שעלול להיגרם כתוצאה משימוש באפליקציה שלנו, והאחריות לשימוש בתירוצים היא על המשתמש בלבד");
+        builder1.setPositiveButton(
+                "אני מסכים",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
     //----------------------------------------------------------------------------------------------
     /*
