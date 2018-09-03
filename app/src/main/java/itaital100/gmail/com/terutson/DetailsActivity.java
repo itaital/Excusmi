@@ -35,14 +35,15 @@ public class DetailsActivity extends AppCompatActivity
         ActivityCategory = getExcuseCategoryType();
         currentExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
         myTextBox.setText(currentExcuse);
-        initCopyButton();
-        initforwardButton();
+       // initCopyButton();
+       // initforwardButton();
     }
 //-----------------------------------------------------------------------
       /*
            when press copy it will copy the text to the clipboard
            and it will show a msg that the text was copied.
          */
+    /*
     private void initCopyButton()
     {
         copy_Button = (Button) findViewById(R.id.btn_copy);
@@ -63,6 +64,8 @@ public class DetailsActivity extends AppCompatActivity
       /*
            show next excuse that is different then the previous
        */
+
+    /*
     private void initforwardButton()
     {
         forward_Button = (Button) findViewById(R.id.btn_forward);
@@ -82,6 +85,7 @@ public class DetailsActivity extends AppCompatActivity
             }
         });
     }
+    */
     //-------------------------------------------------------------------------------------------
     /*
         Checks if this activity got any messege about the type of the category that it is meant for.
