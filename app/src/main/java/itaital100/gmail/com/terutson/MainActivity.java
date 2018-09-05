@@ -1,6 +1,7 @@
 package itaital100.gmail.com.terutson;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.ImageButton;
 import android.content.DialogInterface;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setGraphicsRegionTo("eng"); // it enough to do it just once in main
         setContentView(R.layout.activity_main);
         initCategoriesButtons(); // init all of the catagories button and store them inside allCatagoriesButton arrayList
 
@@ -37,6 +40,17 @@ public class MainActivity extends AppCompatActivity
         {
             openFirstTimeDiaolog();
         }
+    }
+    //----------------------------------------------------------------------------------------------
+    private void setGraphicsRegionTo(String lang)
+    {
+        String languageToLoad  = "en"; // your language
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
     }
     //----------------------------------------------------------------------------------------------
     boolean openingForTheFirstTime()
