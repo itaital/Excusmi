@@ -32,24 +32,33 @@
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="366dp"
+            android:layout_height="188dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#214b86"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_copy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.728" />
+
+        <TextView
             android:id="@+id/txt_teruson"
-            android:layout_width="263dp"
-            android:layout_height="156dp"
-            android:layout_marginBottom="121dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="121dp"
+            android:layout_width="350dp"
+            android:layout_height="172dp"
+            android:layout_marginTop="8dp"
+            android:background="#ecebeb"
             android:scrollbars="vertical"
             android:text=" תירוץ כלשהו שיכול להיות גם ארוך"
+            android:textColor="@android:color/background_dark"
             android:textSize="32dp"
             android:textStyle="italic"
             android:typeface="serif"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.053" />
+            app:layout_constraintTop_toTopOf="@+id/textView" />
 
         <Button
             android:id="@+id/btn_copy"
@@ -58,8 +67,8 @@
             android:layout_marginBottom="156dp"
             android:layout_marginEnd="136dp"
             android:layout_marginStart="136dp"
-            android:layout_marginTop="300dp"
-            android:background="@color/colorAccent"
+            android:layout_marginTop="340dp"
+            android:background="#ed9f51"
             android:text="העתק"
             android:textColor="@android:color/black"
             android:textSize="30dp"
@@ -67,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.634" />
+            app:layout_constraintVertical_bias="0.46" />
 
         <ImageButton
             android:id="@+id/btn_backward"
@@ -75,7 +84,7 @@
             android:layout_height="127dp"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="50dp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_copy"
@@ -88,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
