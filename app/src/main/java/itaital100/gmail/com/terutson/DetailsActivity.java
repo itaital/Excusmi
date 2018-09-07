@@ -28,9 +28,8 @@ public class DetailsActivity extends AppCompatActivity
         Category        ActivityCategory;
         ExusesFactory   myExcuseFactory = new ExusesFactory();
         HashSet<String> currentExcusesInStack = new HashSet<String>();
-
-
         Stack excusesStack = new Stack();
+
 
     //Components:
         TextView myTextBox;
