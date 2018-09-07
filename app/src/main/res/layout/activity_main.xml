@@ -26,7 +26,6 @@
         android:layout_height="@dimen/_45sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginTop="@dimen/_50sdp"
         android:includeFontPadding="true"
         android:text="אני צריך תירוץ ל..."
         android:textAppearance="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle"
@@ -34,7 +33,7 @@
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/categoryLabels" />
+        tools:layout_editor_absoluteY="50dp" />
 
     <LinearLayout
         android:id="@+id/CatagoriesButtons"
@@ -47,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/topLabel">
 
         <LinearLayout
+            android:id="@+id/Row_1"
             android:layout_width="@dimen/_320sdp"
             android:layout_height="@dimen/_125sdp"
             android:orientation="horizontal">
@@ -62,7 +62,7 @@
                 android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
                 android:adjustViewBounds="false"
-                android:background="0"
+                android:background="@android:color/transparent"
                 android:cropToPadding="false"
                 app:srcCompat="@drawable/icon_meeting" />
 
@@ -76,7 +76,7 @@
                 android:layout_width="@dimen/_135sdp"
                 android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
-                android:background="0"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/icon_work" />
 
             <Space
@@ -86,6 +86,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/Row_2"
             android:layout_width="@dimen/_320sdp"
             android:layout_height="@dimen/_125sdp"
             android:orientation="horizontal">
@@ -100,7 +101,7 @@
                 android:layout_width="@dimen/_135sdp"
                 android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
-                android:background="0"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/icon_ex" />
 
             <Space
@@ -113,7 +114,7 @@
                 android:layout_width="@dimen/_135sdp"
                 android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
-                android:background="0"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/icon_date" />
 
             <Space
@@ -124,6 +125,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/Row_3"
             android:layout_width="@dimen/_320sdp"
             android:layout_height="@dimen/_185sdp"
             android:orientation="horizontal">
@@ -138,7 +140,7 @@
                 android:layout_width="@dimen/_135sdp"
                 android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
-                android:background="0"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/icon_event" />
 
             <Space
@@ -151,6 +153,7 @@
                 android:layout_width="@dimen/_135sdp"
                 android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/icon_hw" />
 
             <Space
@@ -160,16 +163,5 @@
 
         </LinearLayout>
     </LinearLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/categoryLabels"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
