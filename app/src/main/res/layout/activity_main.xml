@@ -23,10 +23,10 @@
     <TextView
         android:id="@+id/topLabel"
         android:layout_width="362dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_50sdp"
         android:includeFontPadding="true"
         android:text="אני צריך תירוץ ל..."
         android:textAppearance="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle"
@@ -40,117 +40,122 @@
         android:id="@+id/CatagoriesButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/_85sdp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topLabel">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="@dimen/_320sdp"
+            android:layout_height="@dimen/_125sdp"
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/btn_meeting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
                 android:adjustViewBounds="false"
+                android:background="0"
                 android:cropToPadding="false"
                 app:srcCompat="@drawable/icon_meeting" />
 
             <Space
-                android:layout_width="55dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_155sdp"
                 android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/btn_work"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
+                android:background="0"
                 app:srcCompat="@drawable/icon_work" />
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="130dp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_320sdp"
+            android:layout_height="@dimen/_125sdp"
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="130dp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/btn_ex"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
+                android:background="0"
                 app:srcCompat="@drawable/icon_ex" />
 
             <Space
-                android:layout_width="55dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_155sdp"
                 android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/btn_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
+                android:background="0"
                 app:srcCompat="@drawable/icon_date" />
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="130dp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_320sdp"
+            android:layout_height="@dimen/_185sdp"
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="130dp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/btn_occasion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
+                android:background="0"
                 app:srcCompat="@drawable/icon_event" />
 
             <Space
-                android:layout_width="55dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_155sdp"
                 android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/btn_hw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_135sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/icon_hw" />
 
             <Space
-                android:layout_width="10dp"
-                android:layout_height="130dp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_125sdp"
                 android:layout_weight="1" />
 
         </LinearLayout>

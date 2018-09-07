@@ -27,7 +27,7 @@ public class DetailsActivity extends AppCompatActivity
         String          currentExcuse; // we don't need this!
         Category        ActivityCategory;
         ExusesFactory   myExcuseFactory = new ExusesFactory();
-        HashSet<String> currentExcusesInStack = new HashSet<String>();
+        HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
         Stack excusesStack = new Stack();
 
 
@@ -84,6 +84,10 @@ public class DetailsActivity extends AppCompatActivity
       /*
            show next excuse that is different then the previous
        */
+
+
+
+
     private void initforwardButton()
     {
         forward_Button = (ImageButton) findViewById(R.id.btn_forward);
@@ -101,12 +105,12 @@ public class DetailsActivity extends AppCompatActivity
                      while(currentExcuse == newExcuse);
 
                      //push to stack while preventing duplicates:
-                    if( !currentExcusesInStack.contains(currentExcuse) )
-                    {
+                   //  if( !currentExcusesInStack.contains(currentExcuse) )
+                   // {
                         //After we got the new Excuse:
                         excusesStack.push(currentExcuse);
                         currentExcusesInStack.add(currentExcuse);
-                    }
+                    //}
 
                 myTextBox.setText(newExcuse);
                 currentExcuse = newExcuse;
@@ -129,6 +133,7 @@ public class DetailsActivity extends AppCompatActivity
             {
                 int stackSize;
                 stackSize = excusesStack.size();
+
 
                 switch(stackSize)
                 {

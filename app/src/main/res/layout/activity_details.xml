@@ -33,10 +33,10 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="366dp"
-            android:layout_height="188dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:background="#214b86"
             app:layout_constraintBottom_toBottomOf="@+id/btn_copy"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +46,9 @@
 
         <TextView
             android:id="@+id/txt_teruson"
-            android:layout_width="350dp"
-            android:layout_height="172dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="@dimen/_270sdp"
+            android:layout_height="@dimen/_125sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:background="#ecebeb"
             android:scrollbars="vertical"
             android:text=" תירוץ כלשהו שיכול להיות גם ארוך"
@@ -67,7 +67,7 @@
             android:layout_marginBottom="156dp"
             android:layout_marginEnd="136dp"
             android:layout_marginStart="136dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="@dimen/_250sdp"
             android:background="#ed9f51"
             android:text="העתק"
             android:textColor="@android:color/black"
@@ -80,11 +80,11 @@
 
         <ImageButton
             android:id="@+id/btn_backward"
-            android:layout_width="132dp"
-            android:layout_height="127dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="@dimen/_128sdp"
+            android:layout_height="@dimen/_128sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_copy"
@@ -94,10 +94,10 @@
 
         <ImageButton
             android:id="@+id/btn_forward"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="50dp"
+            android:layout_width="@dimen/_128sdp"
+            android:layout_height="@dimen/_128sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
