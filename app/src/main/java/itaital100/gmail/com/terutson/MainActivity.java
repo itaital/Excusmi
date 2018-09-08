@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.content.DialogInterface;
 
 import java.util.ArrayList;
@@ -15,17 +15,17 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
 {
- //Variables:
-        //Categories buttons:
-                ImageButton categoryButton_hw;
-                ImageButton categoryButton_meeting;
-                ImageButton categoryButton_ex;
-                ImageButton categoryButton_work;
-                ImageButton categoryButton_date;
-                ImageButton categoryButton_occassion;
+    //Variables:
+    //Categories buttons:
+    Button categoryButton_hw;
+    Button categoryButton_meeting;
+    Button categoryButton_ex;
+    Button categoryButton_work;
+    Button categoryButton_date;
+    Button categoryButton_occassion;
 
     //An array to contain all categories:
-        ArrayList<ImageButton> allCategoriesButtons = new ArrayList<ImageButton>();
+    ArrayList<Button> allCategoriesButtons = new ArrayList<Button>();
 //#################################################################################################
 
     @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
     {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         builder1.setMessage("שלום לכם! " + "\n" +"אנו מודים לכם שבחרתם להשתמש באפליקציה שלנו ומקווים שהיא תועיל לכם מאד" +
-                            "\n"+"עם זאת, אין אנו אחראים על כל נזק שעלול להיגרם כתוצאה משימוש באפליקציה שלנו, והאחריות לשימוש בתירוצים היא על המשתמש בלבד");
+                "\n"+"עם זאת, אין אנו אחראים על כל נזק שעלול להיגרם כתוצאה משימוש באפליקציה שלנו, והאחריות לשימוש בתירוצים היא על המשתמש בלבד");
         builder1.setPositiveButton(
                 "אני מסכים",
                 new DialogInterface.OnClickListener() {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         addAllButtonsToArray(allCategoriesButtons);
 
         //Set an action listener for each category button
-        for(final ImageButton categoryButton : allCategoriesButtons)
+        for(final Button categoryButton : allCategoriesButtons)
         {
             categoryButton.setOnClickListener(
                     new View.OnClickListener() {
@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity
                             Intent startIntent = new Intent(getApplicationContext(), DetailsActivity.class);
 
                             //get category name and build a key messege to send the next activity://
-                           String fullResourceName = getResources().getResourceName(categoryButton.getId());
-                           String categoryName = fullResourceName.substring(fullResourceName.lastIndexOf("_")+1);
-                           String prefix = "com.gmail.itaital100.";
-                           String finalKey = prefix + categoryName; //--> final key messege
+                            String fullResourceName = getResources().getResourceName(categoryButton.getId());
+                            String categoryName = fullResourceName.substring(fullResourceName.lastIndexOf("_")+1);
+                            String prefix = "com.gmail.itaital100.";
+                            String finalKey = prefix + categoryName; //--> final key messege
 
                             //send messege to the next activity://
                             startIntent.putExtra(finalKey,categoryButton.getId());
@@ -111,15 +111,15 @@ public class MainActivity extends AppCompatActivity
     //----------------------------------------------------------------------------------------------
     private void setCategories()
     {
-        categoryButton_hw         =  (ImageButton)findViewById(R.id.btn_hw);
-        categoryButton_meeting    =  (ImageButton)findViewById(R.id.btn_meeting);
-        categoryButton_ex         =  (ImageButton)findViewById(R.id.btn_ex);
-        categoryButton_work       =  (ImageButton)findViewById(R.id.btn_work);
-        categoryButton_date       =  (ImageButton)findViewById(R.id.btn_date);;
-        categoryButton_occassion  =  (ImageButton)findViewById(R.id.btn_occasion);
+        categoryButton_hw         =  (Button)findViewById(R.id.btn_hw);
+        categoryButton_meeting    =  (Button)findViewById(R.id.btn_meeting);
+        categoryButton_ex         =  (Button)findViewById(R.id.btn_ex);
+        categoryButton_work       =  (Button)findViewById(R.id.btn_work);
+        categoryButton_date       =  (Button)findViewById(R.id.btn_date);;
+        categoryButton_occassion  =  (Button)findViewById(R.id.btn_occasion);
     }
     //----------------------------------------------------------------------------------------------
-    private void addAllButtonsToArray(ArrayList<ImageButton> arr)
+    private void addAllButtonsToArray(ArrayList<Button> arr)
     {
         arr.add(categoryButton_work);
         arr.add(categoryButton_hw);

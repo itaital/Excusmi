@@ -4,164 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/teruson_bg"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="8dp"
     tools:layout_editor_absoluteY="25dp">
 
-    <ImageView
-        android:id="@+id/BackgroundImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/teruson_bg" />
-
     <TextView
         android:id="@+id/topLabel"
-        android:layout_width="362dp"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_width="341dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:includeFontPadding="true"
         android:text="אני צריך תירוץ ל..."
         android:textAppearance="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle"
         android:textColor="#214886"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="50dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/CatagoriesButtons"
+    <Button
+        android:id="@+id/btn_meeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_85sdp"
-        android:orientation="vertical"
+        android:background="@drawable/icon_meeting"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ex"
+        app:layout_constraintEnd_toStartOf="@+id/btn_work"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLabel" />
+
+    <Button
+        android:id="@+id/btn_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_work"
+        app:layout_constraintBottom_toTopOf="@+id/btn_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_meeting"
+        app:layout_constraintTop_toBottomOf="@+id/topLabel" />
+
+    <Button
+        android:id="@+id/btn_ex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_ex"
+        app:layout_constraintBottom_toTopOf="@+id/btn_occasion"
+        app:layout_constraintEnd_toStartOf="@+id/btn_date"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_meeting" />
+
+    <Button
+        android:id="@+id/btn_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_date"
+        app:layout_constraintBottom_toTopOf="@+id/btn_hw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_ex"
+        app:layout_constraintTop_toBottomOf="@+id/btn_work" />
+
+    <Button
+        android:id="@+id/btn_occasion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_event"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_hw"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ex" />
+
+    <Button
+        android:id="@+id/btn_hw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_hw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topLabel">
-
-        <LinearLayout
-            android:id="@+id/Row_1"
-            android:layout_width="@dimen/_320sdp"
-            android:layout_height="@dimen/_125sdp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/btn_meeting"
-                android:layout_width="@dimen/_135sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1"
-                android:adjustViewBounds="false"
-                android:background="@android:color/transparent"
-                android:cropToPadding="false"
-                app:srcCompat="@drawable/icon_meeting" />
-
-            <Space
-                android:layout_width="@dimen/_45sdp"
-                android:layout_height="@dimen/_155sdp"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/btn_work"
-                android:layout_width="@dimen/_135sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/icon_work" />
-
-            <Space
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/Row_2"
-            android:layout_width="@dimen/_320sdp"
-            android:layout_height="@dimen/_125sdp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/btn_ex"
-                android:layout_width="@dimen/_135sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/icon_ex" />
-
-            <Space
-                android:layout_width="@dimen/_45sdp"
-                android:layout_height="@dimen/_155sdp"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/btn_date"
-                android:layout_width="@dimen/_135sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/icon_date" />
-
-            <Space
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/Row_3"
-            android:layout_width="@dimen/_320sdp"
-            android:layout_height="@dimen/_185sdp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/btn_occasion"
-                android:layout_width="@dimen/_135sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/icon_event" />
-
-            <Space
-                android:layout_width="@dimen/_45sdp"
-                android:layout_height="@dimen/_155sdp"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:id="@+id/btn_hw"
-                android:layout_width="@dimen/_135sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/icon_hw" />
-
-            <Space
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_125sdp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-    </LinearLayout>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_occasion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_date" />
 
 </android.support.constraint.ConstraintLayout>

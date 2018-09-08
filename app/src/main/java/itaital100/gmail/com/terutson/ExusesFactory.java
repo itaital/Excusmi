@@ -9,7 +9,18 @@ public class ExusesFactory
     public enum Category{Meeting,Work,Ex,Date,Occassion,Homework}
 
 
-     String[] Exuces_meeting = {"Exuces_meeting1","Exuces_meeting2","Exuces_meeting3", "Exuces_meeting4"};
+     String[] Exuces_meeting =
+             {
+                     "Exuces_meeting1",
+                     "Exuces_meeting2",
+                     "Exuces_meeting3",
+                     "Exuces_meeting4"
+
+
+
+
+
+             };
 
      String[] Exuces_work = {"Exuces_work1","Exuces_work2","Exuces_work3", "Exuces_work4"};
 
