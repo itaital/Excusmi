@@ -41,6 +41,8 @@ public class DetailsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        //sets graphic to be fixed the same as in the android studio editor
+        AppUtilities.setGraphicsRegionTo("eng",this);
         setContentView(R.layout.activity_details);
 
         //get type of activity:

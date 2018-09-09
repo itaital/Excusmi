@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setGraphicsRegionTo("eng"); // it enough to do it just once in main
+        AppUtilities.setGraphicsRegionTo("eng",this); // its not enough to do it just once in main
+                                                                //this needs to be done for each activity
         setContentView(R.layout.activity_main);
         initCategoriesButtons(); // init all of the catagories button and store them inside allCatagoriesButton arrayList
 
@@ -40,17 +41,6 @@ public class MainActivity extends AppCompatActivity
         {
             openFirstTimeDiaolog();
         }
-    }
-    //----------------------------------------------------------------------------------------------
-    private void setGraphicsRegionTo(String lang)
-    {
-        String languageToLoad  = "en"; // your language
-        Locale locale = new Locale(languageToLoad);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
     }
     //----------------------------------------------------------------------------------------------
     boolean openingForTheFirstTime()
