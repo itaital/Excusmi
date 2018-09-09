@@ -2,8 +2,6 @@ package itaital100.gmail.com.terutson;
 
 import android.content.ClipData;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +12,6 @@ import android.content.ClipboardManager;
 import android.widget.Toast;
 
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Stack;
 
 import itaital100.gmail.com.terutson.ExusesFactory.Category;
@@ -42,7 +39,7 @@ public class DetailsActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         //sets graphic to be fixed the same as in the android studio editor
-        AppUtilities.setGraphicsRegionTo("eng",this);
+        LanguageHandler.setGraphicsRegionTo("eng",this);
         setContentView(R.layout.activity_details);
 
         //get type of activity:
