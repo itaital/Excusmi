@@ -24,7 +24,7 @@ public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
         public int      currentExcuseIndex=-1;
-        String          currentExcuse; // we don't need this!
+        String          currentExcuse;
         Category        ActivityCategory;
         ExusesFactory   myExcuseFactory = new ExusesFactory();
         HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
