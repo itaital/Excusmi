@@ -6,23 +6,46 @@ public class ExusesFactory
 {
     Random rand = new Random();
     int index;
+
+
+    /*
+    Rules for writing excuses:
+        1) dont make it over complicated.
+        2) dont make it too long
+        3) dont make it too detailed. its okay to "leave  things at  the dark"
+        4)
+     */
     public enum Category{Meeting,Work,Ex,Date,Occassion,Homework}
 
 
      String[] Exuces_meeting =
              {
-                     "Exuces_meeting1",
-                     "Exuces_meeting2",
-                     "Exuces_meeting3",
-                     "Exuces_meeting4"
+                     "יש לי תור לרופא",
+                     "היי, קמתי עם חום היום",
+                     "משהוא דחוף שמצריך אותי צץ עכשיו ואני לא אוכל לבוא",
+                     "יש לאח שלי יום הולדת ואנחנו חוגגים לו במסעדה",
+                     "יש אזכרה לסבתא רבא שלי ולגמרי שכחתי מזה",
+                     "יש לי מיגרנה ואני לא רוצה להיפגש כשאני ככה",
+                     "יש לבן הדוד שלי יום הולדת",
+                     "החליפו איתי משמרת, אני אעבוד בשעות האלה",
+                     "טיפה הגזמתי אתמול, אני מוכרח להשלים שעות שינה",
+                     "הרכבת מתעכבת, לא אספיק להגיע בזמן",
+                     "יש עומס בעבודה, אני רוצה להמשיך לעבוד מהבית",
+                     "יש לנו אורחים",
+                     "יש לי מבחן חשוב שאני צריך להתכונן אליו, פעם אחרת ?"
+             };
 
-
-
+     String[] Exuces_work =
+             {
+                     "התפוצץ צינור כלשהוא בבית. כל הרצפה מלאה בסמרטוטים והטכנאי יבוא רק בין השעות.",
+                     "יש לי תור לבדיקה רפואית חשובה שלא סובלת דיחוי",
+                     "אני מצטער, יש לנו מקרה חירום משפחתי. אני מקווה שהכל יהיה בסדר בקרוב ושנגלה שזו בהלת שווא",
+                     "יש לי שפעת, זה כנראה מידבק",
+                     "הילד לא מרגיש טוב, צריך לקחת אותו לרופא",
+                     ""
 
 
              };
-
-     String[] Exuces_work = {"Exuces_work1","Exuces_work2","Exuces_work3", "Exuces_work4"};
 
      String[] Exuces_ex = {"Exuces_ex1","Exuces_ex2","Exuces_ex3", "Exuces_ex4"};
 
