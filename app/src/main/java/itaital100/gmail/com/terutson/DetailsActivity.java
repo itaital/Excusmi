@@ -78,15 +78,9 @@ public class DetailsActivity extends AppCompatActivity
         });
     }
 //-------------------------------------------------------------------------------------------
-
-    //-----------------------------------------------------------------------
-      /*
+     /*
            show next excuse that is different then the previous
        */
-
-
-
-
     private void initforwardButton()
     {
         forward_Button = (ImageButton) findViewById(R.id.btn_forward);
