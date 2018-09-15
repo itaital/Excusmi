@@ -14,6 +14,9 @@ import android.widget.Toast;
 import java.util.HashSet;
 import java.util.Stack;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import itaital100.gmail.com.terutson.ExusesFactory.Category;
 
 
@@ -33,6 +36,7 @@ public class DetailsActivity extends AppCompatActivity
         Button copy_Button;
         ImageButton forward_Button;
         ImageButton backward_Button;
+        AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,7 +48,9 @@ public class DetailsActivity extends AppCompatActivity
 
         //get type of activity:
         ActivityCategory = getExcuseCategoryType();
-
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         //init components:
             initExcuseTextBox();
             initCopyButton();
