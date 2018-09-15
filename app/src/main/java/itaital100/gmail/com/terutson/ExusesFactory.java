@@ -7,7 +7,6 @@ public class ExusesFactory
     Random rand = new Random();
     int index;
 
-
     /*
     Rules for writing excuses:
         1) dont make it over complicated.
@@ -119,5 +118,4 @@ public class ExusesFactory
                     return  null;
             }
     }
-
 }
