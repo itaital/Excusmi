@@ -31,6 +31,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="LARGE_BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        </com.google.android.gms.ads.AdView>
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="@dimen/_280sdp"

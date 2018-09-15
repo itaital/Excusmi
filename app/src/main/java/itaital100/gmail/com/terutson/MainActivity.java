@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.DialogInterface;
-
 import java.util.ArrayList;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
        //Handle langauge:
                 LanguageHandler.saveLocalLanguage();
                 LanguageHandler.setGraphicsRegionTo("eng",this);
@@ -36,7 +38,6 @@ public class MainActivity extends AppCompatActivity
                 //this needs to be done for each activity
 
         //init layout:
-        setContentView(R.layout.activity_main);
         initCategoriesButtons(); // init all of the catagories button and store them inside variable: allCatagoriesButton arrayList
 
         //check if the user opens the app for the first time:
