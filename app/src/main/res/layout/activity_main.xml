@@ -92,4 +92,15 @@
         app:layout_constraintStart_toEndOf="@+id/btn_occasion"
         app:layout_constraintTop_toBottomOf="@+id/btn_date" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="62dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_dehaze_white_36" />
+
 </android.support.constraint.ConstraintLayout>
