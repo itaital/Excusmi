@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
     Button categoryButton_work;
     Button categoryButton_date;
     Button categoryButton_occassion;
-
+    Button plus;
     //An array to contain all categories:
     ArrayList<Button> allCategoriesButtons = new ArrayList<Button>();
 //#################################################################################################
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
         //init layout:
         initCategoriesButtons(); // init all of the catagories button and store them inside variable: allCatagoriesButton arrayList
+        initPlusButton();
 
         //check if the user opens the app for the first time:
         if(openingForTheFirstTime())
@@ -104,6 +105,22 @@ public class MainActivity extends AppCompatActivity
         }
     }
     //----------------------------------------------------------------------------------------------
+
+    /*
+       go to Suggestion activity when press plus button
+     */
+    private void initPlusButton(){
+        plus = (Button)findViewById(R.id.btn_plus);
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startIntent = new Intent(getApplicationContext(), Suggestion_Activity.class);
+                startActivity(startIntent);
+            }
+        });
+    }
+
+
     private void setCategories()
     {
         categoryButton_hw         =  (Button)findViewById(R.id.btn_hw);
