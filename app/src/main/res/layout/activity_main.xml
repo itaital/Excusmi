@@ -92,4 +92,12 @@
         app:layout_constraintStart_toEndOf="@+id/btn_occasion"
         app:layout_constraintTop_toBottomOf="@+id/btn_date" />
 
+    <Button
+        android:id="@+id/btn_plus"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:text="+"
+        tools:layout_editor_absoluteX="261dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 </android.support.constraint.ConstraintLayout>
