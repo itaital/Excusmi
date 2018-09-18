@@ -17,40 +17,50 @@ import itaital100.gmail.com.terutson.R;
 public class Suggestion_Activity extends AppCompatActivity {
 
     //ComboBox items:
-    String[] items = new String[]
-                                {
-                                    "עבודה",
-                                    "פגישה",
-                                    "בריחה מדייט",
-                                    "מטלה",
-                                    "שיעורי בית",
-                                     "אירוע"
-                                };
+    String[] items = {"עבודה", "פגישה", "בריחה מדייט", "מטלה", "שיעורי בית", "אירוע"};
+    Spinner myComboBox;
+    //email:
+    Button btn_sendEmail;
+    EditText myEditBox;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
-
-        Button email = (Button) findViewById(R.id.btn_email);
-        EditText et = (EditText) findViewById(R.id.txt_edit);
-        //get the spinner from the xml.
-        Spinner dropdown = findViewById(R.id.spinner);
-
-//create an adapter to describe how the items are displayed, adapters are used in several places in android.
-//There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-//set the spinners adapter to the previously created one.
-        dropdown.setAdapter(adapter);
-
-        email.setOnClickListener(new View.OnClickListener() {
+        //init all components:
+        init_editBox();
+        init_ComboBox();
+        init_SendButton();
+    }
+    //----------------------------------------------------------------------------------------------
+    void init_editBox()
+    {
+        myEditBox = (EditText) findViewById(R.id.txt_edit);
+    }
+    //----------------------------------------------------------------------------------------------
+    void init_SendButton()
+    {
+        btn_sendEmail = (Button) findViewById(R.id.btn_email);
+        btn_sendEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendEmail();
             }
         });
-
+    }
+    //----------------------------------------------------------------------------------------------
+    void init_ComboBox()
+    {
+        //get the spinner from the xml.
+        myComboBox = findViewById(R.id.spinner);
+        //create an adapter to describe how the items are displayed, adapters
+        // are used in several places in android.
+        //There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        //set the spinners adapter to the previously created one.
+        myComboBox.setAdapter(adapter);
     }
 
     protected void sendEmail() {
