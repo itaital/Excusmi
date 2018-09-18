@@ -12,9 +12,13 @@ public class ExusesFactory
         1) dont make it over complicated.
         2) dont make it too long
         3) dont make it too detailed. its okay to "leave  things at  the dark"
-        4)
+
      */
     public enum Category{Meeting,Work,Ex,Date,Occassion,Homework}
+    public enum Gender{Male,Female};
+
+    static Gender selectedGender = Gender.Male;
+
 
 
      String[] Exuces_meeting =

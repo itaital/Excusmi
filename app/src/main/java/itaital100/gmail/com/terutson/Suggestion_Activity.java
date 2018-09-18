@@ -16,8 +16,20 @@ import itaital100.gmail.com.terutson.R;
 
 public class Suggestion_Activity extends AppCompatActivity {
 
+    //ComboBox items:
+    String[] items = new String[]
+                                {
+                                    "עבודה",
+                                    "פגישה",
+                                    "בריחה מדייט",
+                                    "מטלה",
+                                    "שיעורי בית",
+                                     "אירוע"
+                                };
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestion);
 
@@ -25,8 +37,7 @@ public class Suggestion_Activity extends AppCompatActivity {
         EditText et = (EditText) findViewById(R.id.txt_edit);
         //get the spinner from the xml.
         Spinner dropdown = findViewById(R.id.spinner);
-//create a list of items for the spinner.
-        String[] items = new String[]{"עבודה", "פגישה", "בריחה מדייט", "מטלה", "שיעורי בית", "אירוע"};
+
 //create an adapter to describe how the items are displayed, adapters are used in several places in android.
 //There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
@@ -50,7 +61,6 @@ public class Suggestion_Activity extends AppCompatActivity {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");
-
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);

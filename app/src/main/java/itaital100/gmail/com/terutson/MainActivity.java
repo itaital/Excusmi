@@ -1,151 +1,117 @@
 package itaital100.gmail.com.terutson;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.content.DialogInterface;
+
 import java.util.ArrayList;
 import com.google.android.gms.ads.MobileAds;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener
 {
-    //Variables:
-    //Categories buttons:
-    Button categoryButton_hw;
-    Button categoryButton_meeting;
-    Button categoryButton_ex;
-    Button categoryButton_work;
-    Button categoryButton_date;
-    Button categoryButton_occassion;
+    //                          Categories                          //
+    Button categoryButton_meeting;        Button categoryButton_work;
+    Button categoryButton_occassion;      Button categoryButton_hw;
+    Button categoryButton_ex;             Button categoryButton_date;
 
-    Button menuButton;
+    ArrayList<Button> allCategoriesButtons = new ArrayList<Button>();    //An array to contain all categories:
 
-    private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
+    //                          Menu:                               //
+    private DrawerLayout   myMenu_drawer;
+    private NavigationView myMenu_navigation;
+    private Button         myMenu_btn;
 
 
 
-    //An array to contain all categories:
-    ArrayList<Button> allCategoriesButtons = new ArrayList<Button>();
-//#################################################################################################
 
+//Start of the program:
+//--------------------------------------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mDrawerLayout = findViewById(R.id.drawer_layout);
 
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
-        //Handle langauge:
-        LanguageHandler.saveLocalLanguage();
-        LanguageHandler.setGraphicsRegionTo("eng",this);
-        //^ its not enough to do it just once in main
-        //this needs to be done for each activity
-
-        //init layout:
-        initCategoriesButtons(); // init all of the catagories button and store them inside variable: allCatagoriesButton arrayList
-        menuButton                =  (Button)findViewById(R.id.btn_menu);
-        menuButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        mDrawerLayout.openDrawer(Gravity.LEFT);
-                        }});
-        //navigation init:
-        mNavigationView = (NavigationView)findViewById(R.id.nav_view);
-        mNavigationView.setNavigationItemSelectedListener(this);
-        //check if the user opens the app for the first time:
+        //Initialize:
+                init_Ads();
+                init_GraphicOriention();
+                init_Categories();
+                init_Menu();
+                ExusesFactory.selectedGender = Utils.getSelectedGender(this);
         if(openingForTheFirstTime())
         {
             openFirstTimeDiaolog();
         }
-
     }
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
 
-    //----------------------------------------------------------------------------------------------
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.nav_add_excuse:
-
-                break;
-            case R.id.change_gender:
-
-                break;
-
-            case R.id.about:
-                openConfirmDialog("אנחנו אריאל ואיתי בלה בלה בלה","אוקיי");
-            default:
-                return false;
-        }
-        mDrawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-    @Override
-    public void onBackPressed() {
-        if (this.mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            this.mDrawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-    //----------------------------------------------------------------------------------------------
-    boolean openingForTheFirstTime()
+    /**
+     *
+     * @return true if the app hadnt been opend before
+     *  or false if the app had been opened atleast once before
+     */
+    private boolean openingForTheFirstTime()
     {
-        return false;
+        String isFirstTime = Utils.getVariable("Opened",this);
+        if(isFirstTime.equals("notfound"))
+        {
+            Utils.commitVariable("Opened","yes",this);
+            return true;
+        }
+        else return false;
     }
     //----------------------------------------------------------------------------------------------
     void openFirstTimeDiaolog()
     {
-
         String msg ="שלום לכם! " + "\n" +"אנו מודים לכם שבחרתם להשתמש באפליקציה שלנו ומקווים שהיא תועיל לכם מאד" +
                 "\n"+"עם זאת, אין אנו אחראים על כל נזק שעלול להיגרם כתוצאה משימוש באפליקציה שלנו, והאחריות לשימוש בתירוצים היא על המשתמש בלבד";
         String confirmMsg = "אני מסכים";
-        openConfirmDialog(msg,confirmMsg);
+        Utils.openConfirmDialog(msg,confirmMsg,this);
+        //openGenderSelectDialog();
     }
-    void openConfirmDialog(String MainMsg,String confirmMsg)
+    //----------------------------------------------------------------------------------------------
+    private void init_Menu()
     {
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage(MainMsg);
-        builder1.setPositiveButton(
-                confirmMsg,
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
+        myMenu_drawer = findViewById(R.id.drawer_layout);
+        myMenu_btn =  (Button)findViewById(R.id.btn_menu);
+        myMenu_btn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        myMenu_drawer.openDrawer(Gravity.LEFT);
+                    }});
+        //navigation init:
+        myMenu_navigation = (NavigationView)findViewById(R.id.nav_view);
+        myMenu_navigation.setNavigationItemSelectedListener(this);
+    }
+    private void init_GraphicOriention()
+    {
+        Utils.setGraphicsRegionTo("en",this);
+    }
+    //----------------------------------------------------------------------------------------------
+    private void init_Ads()
+    {
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
     }
     //----------------------------------------------------------------------------------------------
     /*
        This function inits all categories buttons according to their id
        and attach a clickEvenet Listener to each one of them in a uniform way.
      */
-    private void initCategoriesButtons()
+    private void init_Categories()
     {
         setCategories();
         addAllButtonsToArray(allCategoriesButtons);
@@ -178,45 +144,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //----------------------------------------------------------------------------------------------
     private void setCategories()
     {
-
         categoryButton_hw         =  (Button)findViewById(R.id.btn_hw);
         categoryButton_meeting    =  (Button)findViewById(R.id.btn_meeting);
         categoryButton_ex         =  (Button)findViewById(R.id.btn_ex);
         categoryButton_work       =  (Button)findViewById(R.id.btn_work);
         categoryButton_date       =  (Button)findViewById(R.id.btn_date);;
         categoryButton_occassion  =  (Button)findViewById(R.id.btn_occasion);
-
     }
     //----------------------------------------------------------------------------------------------
     private void addAllButtonsToArray(ArrayList<Button> arr)
     {
-
         arr.add(categoryButton_work);
         arr.add(categoryButton_hw);
         arr.add(categoryButton_meeting);
         arr.add(categoryButton_ex);
         arr.add(categoryButton_date);
         arr.add(categoryButton_occassion);
-
     }
-
+    //----------------------------------------------------------------------------------------------
+    //Change back button fucntionality so it will close the menu if its open
+    @Override
+    public void onBackPressed()
+    {
+        if (this.myMenu_drawer.isDrawerOpen(GravityCompat.START))
+        {
+            this.myMenu_drawer.closeDrawer(GravityCompat.START);
+        }
+        else
+        {
+            super.onBackPressed();
+        }
+    }
+    //----------------------------------------------------------------------------------------------
+    /**
+     *   This tells the menu how to react when an item is clicked
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
-        switch(item.getItemId()) {
+        switch(item.getItemId())
+        {
             case R.id.nav_add_excuse:
-
+                myMenu_drawer.closeDrawer(GravityCompat.START);
+                //This crashes the software
+                //Intent startIntent = new Intent(getApplicationContext(), Suggestion_Activity.class);
+                //startActivity(startIntent);
                 break;
             case R.id.change_gender:
-
+                Utils.openGenderSelectDialog(this);
                 break;
-
             case R.id.about:
-                openConfirmDialog("אנחנו אריאל ואיתי בלה בלה בלה","אוקיי");
+                Utils.openConfirmDialog("אנחנו אריאל ואיתי בלה בלה בלה","אוקיי",this);
             default:
                 return false;
         }
-        mDrawerLayout.closeDrawer(GravityCompat.START);
+        myMenu_drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    //----------------------------------------------------------------------------------------------
 }
+
