@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group>
+        <item
+            android:id="@+id/nav_add_excuse"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="הוסף תירוץ למאגר" />
+        <item
+            android:id="@+id/change_gender"
+            android:icon="@android:drawable/ic_notification_overlay"
+            android:title="שנה נוסח מגדר" />
+        <item
+            android:id="@+id/about"
+            android:icon="@mipmap/terutson_icon"
+            android:title="אודות" />
+    </group>
+</menu>
