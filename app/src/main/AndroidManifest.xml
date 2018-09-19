@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailsActivity" />
+        <activity android:name=".startup_1" />
+        <activity android:name=".startup_2" />
+        <activity android:name=".startup_3"></activity>
     </application>
 
 </manifest>

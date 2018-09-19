@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         String isFirstTime = Utils.getVariable("Opened",this);
         if(isFirstTime.equals("notfound"))
         {
-            Utils.commitVariable("Opened","yes",this);
+           // Utils.commitVariable("Opened","yes",this);
             return true;
         }
         else return false;
@@ -76,11 +76,16 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     //----------------------------------------------------------------------------------------------
     void openFirstTimeDiaolog()
     {
+        Intent startIntent = new Intent(getApplicationContext(), startup_1.class);
+        //start activity://
+        startActivity(startIntent);
+        /*
         String msg ="שלום לכם! " + "\n" +"אנו מודים לכם שבחרתם להשתמש באפליקציה שלנו ומקווים שהיא תועיל לכם מאד" +
                 "\n"+"עם זאת, אין אנו אחראים על כל נזק שעלול להיגרם כתוצאה משימוש באפליקציה שלנו, והאחריות לשימוש בתירוצים היא על המשתמש בלבד";
         String confirmMsg = "אני מסכים";
         Utils.openConfirmDialog(msg,confirmMsg,this);
         //openGenderSelectDialog();
+        */
     }
     //----------------------------------------------------------------------------------------------
     private void init_Menu()
@@ -96,6 +101,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         //navigation init:
         myMenu_navigation = (NavigationView)findViewById(R.id.nav_view);
         myMenu_navigation.setNavigationItemSelectedListener(this);
+        myMenu_navigation.bringToFront();
     }
     private void init_GraphicOriention()
     {
@@ -185,7 +191,12 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         switch(item.getItemId())
         {
             case R.id.nav_add_excuse:
+
                 myMenu_drawer.closeDrawer(GravityCompat.START);
+                Intent i = new Intent(MainActivity.this, Suggestion_Activity.class);
+                startActivity(i);
+                finish();
+
                 //This crashes the software
                 //Intent startIntent = new Intent(getApplicationContext(), Suggestion_Activity.class);
                 //startActivity(startIntent);

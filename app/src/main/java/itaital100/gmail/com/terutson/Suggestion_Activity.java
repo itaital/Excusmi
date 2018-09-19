@@ -28,7 +28,9 @@ public class Suggestion_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        System.out.println("S: Starting suggestion activity");
         setContentView(R.layout.activity_suggestion);
+        System.out.println("S: .xml loaded");
         //init all components:
         init_editBox();
         init_ComboBox();
