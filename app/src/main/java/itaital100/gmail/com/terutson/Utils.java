@@ -2,6 +2,7 @@ package itaital100.gmail.com.terutson;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -67,29 +68,30 @@ public class Utils
         Input: tag - the name you give the saved variable
                var - the variable content, given as String
      */
-    static void commitVariable(String tag, String var, AppCompatActivity activity)
+    static void commitVariable(String tag, String var)
     {
-        SharedPreferences sharedPref= activity.getSharedPreferences("mypref", 0);
+        SharedPreferences sharedPref = MainActivity.sharedPreferences;
+        //SharedPreferences sharedPref= activity.getSharedPreferences("mypref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor= sharedPref.edit();
         //put your value
         editor.putString(tag,var);
         editor.commit();
     }
     //----------------------------------------------------------------------------------------------
-    static String getVariable(String tag,AppCompatActivity activity)
+    static String getVariable(String tag)
     {
-        SharedPreferences sharedPref = activity.getSharedPreferences("mypref", 0);
+        SharedPreferences sharedPref = MainActivity.sharedPreferences;
         String variable = sharedPref.getString(tag, "notfound");
         return variable;
     }
     //----------------------------------------------------------------------------------------------
-    static Gender getSelectedGender(AppCompatActivity activity)
+    static Gender getSelectedGender()
     {
-        String storedGender = getVariable("selected_gender",activity);
+        String storedGender = getVariable("selected_gender");
         if(storedGender.equals("notfound"))
         {
             System.out.println("Gender not found");
-            commitVariable("selected_gender","Male",activity);
+            commitVariable("selected_gender","Male");
             return Gender.Male;
         }
         else
@@ -138,7 +140,7 @@ public class Utils
                         dialog.hide();
                         ExusesFactory.selectedGender = Gender.Male;
                         System.out.println("Trying to commit:"+ExusesFactory.selectedGender.name());
-                        commitVariable("selected_gender",ExusesFactory.selectedGender.name(),myActivity);
+                        commitVariable("selected_gender",ExusesFactory.selectedGender.name());
 
                     }});
         radioBtn_female.setOnClickListener(
@@ -148,7 +150,7 @@ public class Utils
                         dialog.hide();
                         ExusesFactory.selectedGender = Gender.Female;
                         System.out.println("Trying to commit:"+ExusesFactory.selectedGender.name());
-                        commitVariable("selected_gender",ExusesFactory.selectedGender.name(),myActivity);
+                        commitVariable("selected_gender",ExusesFactory.selectedGender.name());
 
                     }});
         // now that the dialog is set up, it's time to show it !

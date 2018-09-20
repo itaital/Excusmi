@@ -26,6 +26,10 @@ public class startup_1 extends AppCompatActivity {
                 }
             });
         }
+    @Override
+    public void onBackPressed() {
+        this.moveTaskToBack(true);
+    }
 }
 
 

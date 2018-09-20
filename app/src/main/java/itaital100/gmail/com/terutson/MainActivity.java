@@ -2,6 +2,7 @@ package itaital100.gmail.com.terutson;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     private NavigationView myMenu_navigation;
     private Button         myMenu_btn;
 
-
+    public static SharedPreferences sharedPreferences = null;
+    private static boolean sharedInitialized = false;
 
 
 //Start of the program:
@@ -42,11 +44,14 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         setContentView(R.layout.activity_main);
 
         //Initialize:
+                init_pref();
                 init_Ads();
                 init_GraphicOriention();
                 init_Categories();
                 init_Menu();
-                ExusesFactory.selectedGender = Utils.getSelectedGender(this);
+
+                ExusesFactory.selectedGender = Utils.getSelectedGender();
+
         if(openingForTheFirstTime())
         {
             openFirstTimeDiaolog();
@@ -65,10 +70,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
      */
     private boolean openingForTheFirstTime()
     {
-        String isFirstTime = Utils.getVariable("Opened",this);
+        String isFirstTime = Utils.getVariable("Opened");
         if(isFirstTime.equals("notfound"))
         {
-           // Utils.commitVariable("Opened","yes",this);
             return true;
         }
         else return false;
@@ -178,7 +182,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
         else
         {
-            super.onBackPressed();
+            this.moveTaskToBack(true);
         }
     }
     //----------------------------------------------------------------------------------------------
@@ -211,6 +215,13 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         }
         myMenu_drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    //----------------------------------------------------------------------------------------------
+    private void init_pref()
+    {
+        if(sharedInitialized) return;
+        sharedPreferences = getSharedPreferences("myprefs", MODE_PRIVATE);
+        sharedInitialized =true;
     }
     //----------------------------------------------------------------------------------------------
 }
