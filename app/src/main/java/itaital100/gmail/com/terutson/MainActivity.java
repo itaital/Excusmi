@@ -47,12 +47,11 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
         //Initialize:
                 init_pref();
+                init_gender();
                 init_Ads();
                 init_GraphicOriention();
                 init_Categories();
                 init_Menu();
-
-                ExusesFactory.selectedGender = Utils.getSelectedGender();
 
         if(openingForTheFirstTime())
         {
@@ -82,16 +81,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     //----------------------------------------------------------------------------------------------
     void openFirstTimeDiaolog()
     {
-        Intent startIntent = new Intent(getApplicationContext(), startup_1.class);
+        Intent firstTimeActivity = new Intent(getApplicationContext(), startup_1.class);
         //start activity://
-        startActivity(startIntent);
-        /*
-        String msg ="שלום לכם! " + "\n" +"אנו מודים לכם שבחרתם להשתמש באפליקציה שלנו ומקווים שהיא תועיל לכם מאד" +
-                "\n"+"עם זאת, אין אנו אחראים על כל נזק שעלול להיגרם כתוצאה משימוש באפליקציה שלנו, והאחריות לשימוש בתירוצים היא על המשתמש בלבד";
-        String confirmMsg = "אני מסכים";
-        Utils.openConfirmDialog(msg,confirmMsg,this);
-        //openGenderSelectDialog();
-        */
+        startActivity(firstTimeActivity);
     }
     //----------------------------------------------------------------------------------------------
     private void init_Menu()
@@ -109,6 +101,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         myMenu_navigation.setNavigationItemSelectedListener(this);
         myMenu_navigation.bringToFront();
     }
+    //----------------------------------------------------------------------------------------------
     private void init_GraphicOriention()
     {
         Utils.setGraphicsRegionTo("en",this);
@@ -220,6 +213,11 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         if(sharedInitialized) return;
         sharedPreferences = getSharedPreferences("myprefs", MODE_PRIVATE);
         sharedInitialized =true;
+    }
+    //----------------------------------------------------------------------------------------------
+    private void init_gender()
+    {
+        ExusesFactory.selectedGender = Utils.getSelectedGender();
     }
     //----------------------------------------------------------------------------------------------
 }
