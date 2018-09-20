@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     private NavigationView myMenu_navigation;
     private Button         myMenu_btn;
 
+    // Preference is a place to store all application related data that you want
+    // to be saved even after the app is closed
     public static SharedPreferences sharedPreferences = null;
     private static boolean sharedInitialized = false;
 
@@ -197,11 +199,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
             case R.id.nav_add_excuse:
 
                 myMenu_drawer.closeDrawer(GravityCompat.START);
-                Intent i = new Intent(MainActivity.this, Suggestion_Activity.class);
-                startActivity(i);
-                finish();
-
-                //This crashes the software
+                //This crashes the software:
                 //Intent startIntent = new Intent(getApplicationContext(), Suggestion_Activity.class);
                 //startActivity(startIntent);
                 break;
