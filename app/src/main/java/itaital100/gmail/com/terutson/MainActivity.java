@@ -1,6 +1,5 @@
 package itaital100.gmail.com.terutson;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
