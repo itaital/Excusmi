@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
             case R.id.nav_add_excuse:
                 myMenu_drawer.closeDrawer(GravityCompat.START);
                 //This crashes the software:
-                Intent startIntent = new Intent(getApplicationContext(),startup_1.class);
+                Intent startIntent = new Intent(getApplicationContext(),Suggestion_Activity.class);
                 startActivity(startIntent);
                 break;
             case R.id.change_gender:

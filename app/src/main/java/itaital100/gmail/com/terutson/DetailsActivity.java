@@ -171,7 +171,6 @@ public class DetailsActivity extends AppCompatActivity
         }
         if(getIntent().hasExtra("com.gmail.itaital100.ex"))
         {
-
             return Category.Ex;
         }
         if(getIntent().hasExtra("com.gmail.itaital100.work"))

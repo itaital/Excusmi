@@ -71,7 +71,6 @@ public class Utils
     static void commitVariable(String tag, String var)
     {
         SharedPreferences sharedPref = MainActivity.sharedPreferences;
-        //SharedPreferences sharedPref= activity.getSharedPreferences("mypref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor= sharedPref.edit();
         //put your value
         editor.putString(tag,var);

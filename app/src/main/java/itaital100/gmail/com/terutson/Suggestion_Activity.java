@@ -10,9 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import itaital100.gmail.com.terutson.R;
 
 public class Suggestion_Activity extends AppCompatActivity {
 
@@ -30,6 +28,7 @@ public class Suggestion_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         System.out.println("debug: Starting suggestion activity");
         setContentView(R.layout.activity_suggestion);
+        Utils.setGraphicsRegionTo("eng",this);
         System.out.println("debug: .xml loaded");
         //init all components:
         init_editBox();
@@ -66,9 +65,15 @@ public class Suggestion_Activity extends AppCompatActivity {
     }
     //----------------------------------------------------------------------------------------------
     protected void sendEmail() {
+        if(myEditBox.length() ==0)
+        {
+            Utils.openConfirmDialog("נא להכניס תירוץ בבקשה","אישור",this);
+            return;
+        }
+        String comboTxt = myComboBox.getSelectedItem().toString();
         Log.i("Send email", "");
-
-        String[] TO = {"itaital00@gmail.com"};
+        String SmyEditBox = myEditBox.getText().toString();
+        String[] TO = {"terutson@gmail.com"};
         String[] CC = {"ArielBerkovich1@gmail.com"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
@@ -77,7 +82,7 @@ public class Suggestion_Activity extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Terutson support");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "there is new Excuse");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "הצעה לתירוץ חדש:" + "\n" + "קטגוריה: " + comboTxt +"\n" + SmyEditBox);
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
