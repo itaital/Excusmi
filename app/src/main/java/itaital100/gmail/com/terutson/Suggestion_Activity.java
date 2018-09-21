@@ -28,9 +28,9 @@ public class Suggestion_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        System.out.println("S: Starting suggestion activity");
+        System.out.println("debug: Starting suggestion activity");
         setContentView(R.layout.activity_suggestion);
-        System.out.println("S: .xml loaded");
+        System.out.println("debug: .xml loaded");
         //init all components:
         init_editBox();
         init_ComboBox();
@@ -64,7 +64,7 @@ public class Suggestion_Activity extends AppCompatActivity {
         //set the spinners adapter to the previously created one.
         myComboBox.setAdapter(adapter);
     }
-
+    //----------------------------------------------------------------------------------------------
     protected void sendEmail() {
         Log.i("Send email", "");
 

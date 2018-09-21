@@ -189,11 +189,10 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         switch(item.getItemId())
         {
             case R.id.nav_add_excuse:
-
                 myMenu_drawer.closeDrawer(GravityCompat.START);
                 //This crashes the software:
-                //Intent startIntent = new Intent(getApplicationContext(), Suggestion_Activity.class);
-                //startActivity(startIntent);
+                Intent startIntent = new Intent(getApplicationContext(),startup_1.class);
+                startActivity(startIntent);
                 break;
             case R.id.change_gender:
                 Utils.openGenderSelectDialog(this);
