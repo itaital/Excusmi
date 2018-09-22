@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,6 +22,8 @@ public class Suggestion_Activity extends AppCompatActivity {
     //email:
     Button btn_sendEmail;
     EditText myEditBox;
+    //check if we have 20 char in line
+    boolean isReached = false;
 
 
     @Override
@@ -34,6 +38,7 @@ public class Suggestion_Activity extends AppCompatActivity {
         init_editBox();
         init_ComboBox();
         init_SendButton();
+        //check_New_Line();
     }
     //----------------------------------------------------------------------------------------------
     void init_editBox()
@@ -91,5 +96,31 @@ public class Suggestion_Activity extends AppCompatActivity {
         } catch (android.content.ActivityNotFoundException ex) {
 
         }
+    }
+
+    protected  void check_New_Line(){
+        myEditBox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // if edittext has 20chars & this is not called yet, add new line
+                if(myEditBox.getText().length() == 20 && !isReached){
+                    myEditBox.append("\n");
+                    isReached = true;
+                }
+                // if edittext has less than 20chars & boolean has changed, reset
+                if(myEditBox.getText().length() < 20 && isReached) isReached = false;
+
+            }
+        });
     }
 }
