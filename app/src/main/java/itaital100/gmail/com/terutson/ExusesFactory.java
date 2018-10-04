@@ -2,59 +2,19 @@ package itaital100.gmail.com.terutson;
 
 import java.util.Random;
 
+import static itaital100.gmail.com.terutson.ExcusesData.Exuces_meeting_female;
+
 public class ExusesFactory
 {
     Random rand = new Random();
     int index;
 
-    /*
-    Rules for writing excuses:
-        1) dont make it over complicated.
-        2) dont make it too long
-        3) dont make it too detailed. its okay to "leave  things at  the dark"
-
-     */
     public enum Category{Meeting,Work,Ex,Date,Occassion,Homework}
+    private enum Language{Hebrew,English};
     public enum Gender{Male,Female};
 
     static Gender selectedGender = Gender.Male;
-
-
-
-     String[] Exuces_meeting =
-             {
-                     "יש לי תור לרופא",
-                     "היי, קמתי עם חום היום",
-                     "משהוא דחוף שמצריך אותי צץ עכשיו ואני לא אוכל לבוא",
-                     "יש לאח שלי יום הולדת ואנחנו חוגגים לו במסעדה",
-                     "יש אזכרה לסבתא רבא שלי ולגמרי שכחתי מזה",
-                     "יש לי מיגרנה ואני לא רוצה להיפגש כשאני ככה",
-                     "יש לבן הדוד שלי יום הולדת",
-                     "החליפו איתי משמרת, אני אעבוד בשעות האלה",
-                     "טיפה הגזמתי אתמול, אני מוכרח להשלים שעות שינה",
-                     "הרכבת מתעכבת, לא אספיק להגיע בזמן",
-                     "יש עומס בעבודה, אני רוצה להמשיך לעבוד מהבית",
-                     "יש לנו אורחים",
-                     "יש לי מבחן חשוב שאני צריך להתכונן אליו, פעם אחרת ?"
-             };
-
-     String[] Exuces_work =
-             {
-                     "התפוצץ צינור כלשהוא בבית. כל הרצפה מלאה בסמרטוטים והטכנאי יבוא רק בין השעות.",
-                     "יש לי תור לבדיקה רפואית חשובה שלא סובלת דיחוי",
-                     "אני מצטער, יש לנו מקרה חירום משפחתי. אני מקווה שהכל יהיה בסדר בקרוב ושנגלה שזו בהלת שווא",
-                     "יש לי שפעת, זה כנראה מידבק",
-                     "הילד לא מרגיש טוב, צריך לקחת אותו לרופא"
-
-             };
-
-     String[] Exuces_ex = {"Exuces_ex1","Exuces_ex2","Exuces_ex3", "Exuces_ex4"};
-
-     String[] Exuces_date = {"Exuces_date1","Exuces_date2","Exuces_date3", "Exuces_date4"};
-
-     String[] Exuces_occasion = {"Exuces_occasion1","Exuces_occasion2","Exuces_occasion3", "Exuces_occasion4"};
-
-     String[] Exuces_hw = {"hw1","hw2","hw3", "hw4"};
+    private Language ExcusesLangauge = Language.Hebrew;
 
     //Note: the user must not get an excuse identical to the one he already have
     //      also, boundaries needs to be checked
@@ -77,24 +37,7 @@ public class ExusesFactory
      */
     int getCategorySize(Category cat)
     {
-        //Switch the category types to return different results
-        switch(cat)
-        {
-            case Meeting:
-                return Exuces_meeting.length;
-            case Work:
-                return Exuces_work.length;
-            case Date:
-                return Exuces_date.length;
-            case Occassion:
-                return Exuces_occasion.length;
-            case Homework:
-                return Exuces_hw.length;
-            case Ex:
-                return Exuces_ex.length;
-            default:
-                return  -1;
-        }
+       return getCategoryArray(cat,selectedGender).length;
     }
     //----------------------------------------------------------------------
     String getExcuse(Category cat, int index)
@@ -103,23 +46,165 @@ public class ExusesFactory
         switch(cat)
             {
                 case Meeting:
-                    return Exuces_meeting[index];
+                    switch(ExcusesLangauge)
+                    {
+                        case Hebrew:
+                                if(selectedGender.equals(Gender.Male))
+                                    return ExcusesData.Exuces_meeting[index];
+                                else
+                                    return ExcusesData.Exuces_meeting_female[index];
+                        case English:
+                                return ExcusesData.Exuces_meeting_english[index];
+                                default:return null;
+                    }
                 case Work:
-                    return Exuces_work[index];
+                    switch(ExcusesLangauge)
+                    {
+                        case Hebrew:
+                            if(selectedGender.equals(Gender.Male))
+                                return ExcusesData.Exuces_work[index];
+                            else
+                                return ExcusesData.Exuces_work_female[index];
+                        case English:
+                            return ExcusesData.Exuces_work_english[index];
+                        default:return null;
+                    }
                 case Date:
-                    return Exuces_date[index];
-
+                    switch(ExcusesLangauge)
+                    {
+                        case Hebrew:
+                            if (selectedGender.equals(Gender.Male))
+                                return ExcusesData.Exuces_date[index];
+                            else
+                                return ExcusesData.Exuces_date_female[index];
+                        case English:
+                            return ExcusesData.Exuces_date_english[index];
+                        default:
+                            return null;
+                    }
                 case Occassion:
-                    return Exuces_occasion[index];
+                    switch(ExcusesLangauge)
+                    {
+                        case Hebrew:
+                            if(selectedGender.equals(Gender.Male))
+                                return ExcusesData.Exuces_occasion[index];
+                            else
+                                return ExcusesData.Exuces_occasion_female[index];
+                        case English:
+                            return ExcusesData.Exuces_occasion_english[index];
+                        default:return null;
+                    }
+
 
                 case Homework:
-                    return Exuces_hw[index];
-
+                    switch(ExcusesLangauge)
+                    {
+                        case Hebrew:
+                            if(selectedGender.equals(Gender.Male))
+                                return ExcusesData.Exuces_hw[index];
+                            else
+                                return ExcusesData.Exuces_hw_female[index];
+                        case English:
+                            return ExcusesData.Exuces_hw_english[index];
+                        default:return null;
+                    }
                 case Ex:
-                    return Exuces_ex[index];
-
+                    switch(ExcusesLangauge)
+                    {
+                        case Hebrew:
+                            if(selectedGender.equals(Gender.Male))
+                                return ExcusesData.Exuces_ex[index];
+                            else
+                                return ExcusesData.Exuces_ex_female[index];
+                        case English:
+                            return ExcusesData.Exuces_ex_english[index];
+                        default:return null;
+                    }
                 default:
                     return  null;
             }
+    }
+    String[] getCategoryArray(Category cat, Gender gender)
+    {
+        //Switch the category types to return different results
+        switch(cat)
+        {
+            case Meeting:
+                switch(ExcusesLangauge)
+                {
+                    case Hebrew:
+                        if(gender.equals(Gender.Male))
+                            return ExcusesData.Exuces_meeting;
+                        else
+                            return Exuces_meeting_female;
+                    case English:
+                        return ExcusesData.Exuces_meeting_english;
+                    default:return null;
+                }
+            case Work:
+                switch(ExcusesLangauge)
+                {
+                    case Hebrew:
+                        if(gender.equals(Gender.Male))
+                            return ExcusesData.Exuces_work;
+                        else
+                            return ExcusesData.Exuces_work_female;
+                    case English:
+                        return ExcusesData.Exuces_work_english;
+                    default:return null;
+                }
+            case Date:
+                switch(ExcusesLangauge)
+                {
+                    case Hebrew:
+                        if (gender.equals(Gender.Male))
+                            return ExcusesData.Exuces_date;
+                        else
+                            return ExcusesData.Exuces_date_female;
+                    case English:
+                        return ExcusesData.Exuces_date_english;
+                    default:
+                        return null;
+                }
+            case Occassion:
+                switch(ExcusesLangauge)
+                {
+                    case Hebrew:
+                        if(gender.equals(Gender.Male))
+                            return ExcusesData.Exuces_occasion;
+                        else
+                            return ExcusesData.Exuces_occasion_female;
+                    case English:
+                        return ExcusesData.Exuces_occasion_english;
+                    default:return null;
+                }
+
+            case Homework:
+                switch(ExcusesLangauge)
+                {
+                    case Hebrew:
+                        if(gender.equals(Gender.Male))
+                            return ExcusesData.Exuces_hw;
+                        else
+                            return ExcusesData.Exuces_hw_female;
+                    case English:
+                        return ExcusesData.Exuces_hw_english;
+                    default:return null;
+                }
+            case Ex:
+                switch(ExcusesLangauge)
+                {
+                    case Hebrew:
+                        if(gender.equals(Gender.Male))
+                            return ExcusesData.Exuces_ex;
+                        else
+                            return ExcusesData.Exuces_ex_female;
+                    case English:
+                        return ExcusesData.Exuces_ex_english;
+                    default:return null;
+                }
+            default:
+                return  null;
+        }
     }
 }

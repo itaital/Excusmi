@@ -5,6 +5,7 @@
     android:layout_height="192dp"
     android:background="#363e4a"
     android:gravity="bottom"
+    android:screenOrientation="portrait"
     android:orientation="vertical"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">

@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -61,6 +62,7 @@ public class DetailsActivity extends AppCompatActivity
     private void initExcuseTextBox()
     {
         myTextBox = (TextView) findViewById(R.id.txt_teruson);
+        myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
         currentExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
         myTextBox.setText(currentExcuse);
     }
@@ -171,7 +173,6 @@ public class DetailsActivity extends AppCompatActivity
         }
         if(getIntent().hasExtra("com.gmail.itaital100.ex"))
         {
-
             return Category.Ex;
         }
         if(getIntent().hasExtra("com.gmail.itaital100.work"))
