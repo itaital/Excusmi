@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 public class Suggestion_Activity extends AppCompatActivity {
 
@@ -24,6 +27,7 @@ public class Suggestion_Activity extends AppCompatActivity {
     EditText myEditBox;
     //check if we have 20 char in line
     boolean isReached = false;
+    AdView mAdView;
 
 
     @Override
@@ -38,6 +42,9 @@ public class Suggestion_Activity extends AppCompatActivity {
         init_editBox();
         init_ComboBox();
         init_SendButton();
+        mAdView = (AdView) findViewById(R.id.adView1);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         //check_New_Line();
     }
     //----------------------------------------------------------------------------------------------

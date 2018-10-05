@@ -49,7 +49,7 @@ public class DetailsActivity extends AppCompatActivity
 
         //get type of activity:
         ActivityCategory = getExcuseCategoryType();
-        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView = (AdView) findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         //init components:
