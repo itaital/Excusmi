@@ -150,7 +150,6 @@ public class Utils
                         ExusesFactory.selectedGender = Gender.Female;
                         System.out.println("Trying to commit:"+ExusesFactory.selectedGender.name());
                         commitVariable("selected_gender",ExusesFactory.selectedGender.name());
-
                     }});
         // now that the dialog is set up, it's time to show it !
         dialog.show();
