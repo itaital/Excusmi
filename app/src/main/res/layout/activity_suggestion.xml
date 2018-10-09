@@ -66,20 +66,16 @@
         android:id="@+id/btn_email"
         android:layout_width="73dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:background="#d6d6d6"
         android:text="שלח"
         android:textColor="#214886"
         android:textSize="@dimen/_20sdp"
-        app:layout_constraintBottom_toTopOf="@+id/adView1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_edit"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_edit" />
 
     <EditText
         android:id="@+id/editText"

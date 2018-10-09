@@ -1,6 +1,8 @@
 package itaital100.gmail.com.terutson;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.widget.Spinner;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
+import java.util.List;
 
 
 public class Suggestion_Activity extends AppCompatActivity {
@@ -82,29 +86,39 @@ public class Suggestion_Activity extends AppCompatActivity {
             Utils.openConfirmDialog("נא להכניס תירוץ בבקשה","אישור",this);
             return;
         }
-        String comboTxt = myComboBox.getSelectedItem().toString();
-        Log.i("Send email", "");
-        String SmyEditBox = myEditBox.getText().toString();
-        String[] TO = {"terutson@gmail.com"};
-        String[] CC = {"ArielBerkovich1@gmail.com"};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
+        else
+        {
+            String comboTxt = myComboBox.getSelectedItem().toString();
+            String SmyEditBox = myEditBox.getText().toString();
+            String[] email_AddressToSend = {"terutson@gmail.com"};
+            String email_subject = "Hey Terutson support, Check out my great Excuse ! " ;
+            String email_content = "הצעה לתירוץ חדש:" + "\n" + "קטגוריה: " + comboTxt +"\n" + SmyEditBox;
 
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Terutson support");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "הצעה לתירוץ חדש:" + "\n" + "קטגוריה: " + comboTxt +"\n" + SmyEditBox);
-
-        try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-            finish();
-            Log.i("Finished sending email.", "");
-        } catch (android.content.ActivityNotFoundException ex) {
-
+            shareToGMail(email_AddressToSend,
+                         email_subject,
+                         email_content
+                    );
         }
-    }
 
+    }
+    //----------------------------------------------------------------------------------------------
+    public void shareToGMail(String[] email, String subject, String content) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, email);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, content);
+        final PackageManager pm = this.getPackageManager();
+        final List<ResolveInfo> matches = pm.queryIntentActivities(emailIntent, 0);
+        ResolveInfo best = null;
+        for(final ResolveInfo info : matches)
+            if (info.activityInfo.packageName.endsWith(".gm") || info.activityInfo.name.toLowerCase().contains("gmail"))
+                best = info;
+        if (best != null)
+            emailIntent.setClassName(best.activityInfo.packageName, best.activityInfo.name);
+        this.startActivity(emailIntent);
+    }
+    //----------------------------------------------------------------------------------------------
     protected  void check_New_Line(){
         myEditBox.addTextChangedListener(new TextWatcher() {
             @Override
