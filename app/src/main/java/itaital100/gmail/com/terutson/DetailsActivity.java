@@ -112,12 +112,13 @@ public class DetailsActivity extends AppCompatActivity
                         excusesStack.push(currentExcuse);
                         currentExcusesInStack.add(currentExcuse);
                     //}
-
+                myTextBox.clearAnimation();
+                myTextBox.setMovementMethod(new ScrollingMovementMethod());//renable scroll down without scrollview
                 myTextBox.setText(newExcuse);
                 currentExcuse = newExcuse;
                 //Theres no reason to keep the backward button  disabled if the stack isnt empty:
                 backward_Button.setEnabled(true);
-                backward_Button.setImageResource(R.drawable.backwards_button);
+                backward_Button.setBackgroundResource(R.drawable.backwards_button);
             }
         });
     }
@@ -126,7 +127,7 @@ public class DetailsActivity extends AppCompatActivity
     {
         backward_Button = (ImageButton) findViewById(R.id.btn_backward);
         backward_Button.setEnabled(false);
-        backward_Button.setImageResource(R.drawable.backwards_button_unchecked);
+        backward_Button.setBackgroundResource(R.drawable.backwards_button_unchecked);
 
         backward_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +141,7 @@ public class DetailsActivity extends AppCompatActivity
                 {
                     case 1:
                         backward_Button.setEnabled(false);
-                        backward_Button.setImageResource(R.drawable.backwards_button_unchecked);
+                        backward_Button.setBackgroundResource(R.drawable.backwards_button_unchecked);
                         break;
                     default:
                         break;

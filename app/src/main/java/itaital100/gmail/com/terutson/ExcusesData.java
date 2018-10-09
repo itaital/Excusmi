@@ -8,9 +8,7 @@ public class ExcusesData
         1) dont make it over complicated.
         2) dont make it too long
         3) dont make it too detailed. its okay to "leave  things at  the dark"
-
      */
-
 //##################################################################################################
     //@@@@@@@@@@@@                      Meeting:                 @@@@@@@@@@@@@@@@//
 
