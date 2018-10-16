@@ -1,12 +1,15 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Startup;
 
 import android.content.Intent;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+
+import itaital100.gmail.com.terutson.Activities.MainActivity;
+import itaital100.gmail.com.terutson.R;
+import itaital100.gmail.com.terutson.Tools.Utils;
 
 public class startup_3 extends AppCompatActivity {
 
@@ -37,6 +40,7 @@ public class startup_3 extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
     }
     @Override
     public void onBackPressed() {

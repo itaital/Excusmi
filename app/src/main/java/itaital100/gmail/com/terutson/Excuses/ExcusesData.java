@@ -1,4 +1,4 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Excuses;
 
 public class ExcusesData
 {

@@ -1,11 +1,12 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Startup;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
+
+import itaital100.gmail.com.terutson.R;
 
 public class startup_1 extends AppCompatActivity {
 
@@ -25,7 +26,8 @@ public class startup_1 extends AppCompatActivity {
                     startActivity(startIntent);
                 }
             });
-        }
+
+    }
     @Override
     public void onBackPressed() {
         this.moveTaskToBack(true);

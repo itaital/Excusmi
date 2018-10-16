@@ -13,7 +13,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,11 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailsActivity" />
-        <activity android:name=".Suggestion_Activity"></activity>
-        <activity android:name=".startup_1" />
-        <activity android:name=".startup_2" />
-        <activity android:name=".startup_3" />
+        <activity android:name=".Activities.DetailsActivity" />
+        <activity android:name=".Activities.Suggestion_Activity"></activity>
+        <activity android:name=".Startup.startup_1" />
+        <activity android:name=".Startup.startup_2" />
+        <activity android:name=".Startup.startup_3" />
     </application>
 
 </manifest>

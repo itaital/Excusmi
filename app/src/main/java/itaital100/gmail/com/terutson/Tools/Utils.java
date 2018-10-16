@@ -1,14 +1,9 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Tools;
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.support.v4.os.ConfigurationCompat;
-import android.support.v4.os.LocaleListCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,7 +11,13 @@ import android.widget.RadioButton;
 
 import java.util.Locale;
 
-import static itaital100.gmail.com.terutson.ExusesFactory.*;
+import itaital100.gmail.com.terutson.Activities.MainActivity;
+import itaital100.gmail.com.terutson.Excuses.ExusesFactory;
+import itaital100.gmail.com.terutson.R;
+import itaital100.gmail.com.terutson.Tools.Enums.*;
+import itaital100.gmail.com.terutson.Config.config;
+
+
 
 public class Utils
 {
@@ -35,7 +36,7 @@ public class Utils
      *            This should almost always be "en"
      */
     //----------------------------------------------------------------------------------------------
-    static void setGraphicsRegionTo(String lang, AppCompatActivity activity)
+    public static void setGraphicsRegionTo(String lang, AppCompatActivity activity)
     {
         String languageToLoad  = lang; // your language
 
@@ -47,7 +48,7 @@ public class Utils
                 activity.getBaseContext().getResources().getDisplayMetrics());
     }
     //----------------------------------------------------------------------------------------------
-    static void openConfirmDialog(String MainMsg,String confirmMsg,AppCompatActivity activity)
+    public static void openConfirmDialog(String MainMsg, String confirmMsg, AppCompatActivity activity)
     {
         AlertDialog.Builder myBuilder = new AlertDialog.Builder(activity);
         myBuilder.setMessage(MainMsg);
@@ -68,7 +69,7 @@ public class Utils
         Input: tag - the name you give the saved variable
                var - the variable content, given as String
      */
-    static void commitVariable(String tag, String var)
+    public static void commitVariable(String tag, String var)
     {
         SharedPreferences sharedPref = MainActivity.sharedPreferences;
         SharedPreferences.Editor editor= sharedPref.edit();
@@ -77,25 +78,23 @@ public class Utils
         editor.commit();
     }
     //----------------------------------------------------------------------------------------------
-    static String getVariable(String tag)
+    public static String getVariable(String tag)
     {
         SharedPreferences sharedPref = MainActivity.sharedPreferences;
         String variable = sharedPref.getString(tag, "notfound");
         return variable;
     }
     //----------------------------------------------------------------------------------------------
-    static Gender getSelectedGender()
+    public static Gender getSelectedGender()
     {
         String storedGender = getVariable("selected_gender");
         if(storedGender.equals("notfound"))
         {
-            System.out.println("Gender not found");
             commitVariable("selected_gender","Male");
             return Gender.Male;
         }
         else
         {
-            System.out.print("Gender found and its:");System.out.println(storedGender);
             switch(storedGender)
             {
                 case "Male":
@@ -108,7 +107,7 @@ public class Utils
         }
     }
     //----------------------------------------------------------------------------------------------
-    static void openGenderSelectDialog(AppCompatActivity activity)
+    public static void openGenderSelectDialog(AppCompatActivity activity)
     {
         final Dialog dialog = new Dialog(activity);
         final AppCompatActivity myActivity= activity;
@@ -121,7 +120,8 @@ public class Utils
         //buttons:
         RadioButton radioBtn_male = (RadioButton) dialog.findViewById(R.id.radioM);
         RadioButton radioBtn_female = (RadioButton) dialog.findViewById(R.id.radioF);
-        if(ExusesFactory.selectedGender == Gender.Male)
+        Gender selectedGender = config.getSelectedGender();
+        if(selectedGender == Gender.Male)
         {
             radioBtn_male.setChecked(true);
             radioBtn_female.setChecked(false);
@@ -137,9 +137,8 @@ public class Utils
                     @Override
                     public void onClick(View view) {
                         dialog.hide();
-                        ExusesFactory.selectedGender = Gender.Male;
-                        System.out.println("Trying to commit:"+ExusesFactory.selectedGender.name());
-                        commitVariable("selected_gender",ExusesFactory.selectedGender.name());
+                       config.setSelectedGender(Gender.Male);
+                       commitVariable("selected_gender",config.getSelectedGender().name());
 
                     }});
         radioBtn_female.setOnClickListener(
@@ -147,9 +146,8 @@ public class Utils
                     @Override
                     public void onClick(View view) {
                         dialog.hide();
-                        ExusesFactory.selectedGender = Gender.Female;
-                        System.out.println("Trying to commit:"+ExusesFactory.selectedGender.name());
-                        commitVariable("selected_gender",ExusesFactory.selectedGender.name());
+                        config.setSelectedGender(Gender.Female);
+                        commitVariable("selected_gender",config.getSelectedGender().name());
                     }});
         // now that the dialog is set up, it's time to show it !
         dialog.show();

@@ -1,4 +1,4 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Activities;
 
 import android.content.ClipData;
 import android.content.Context;
@@ -18,7 +18,10 @@ import java.util.Stack;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import itaital100.gmail.com.terutson.ExusesFactory.Category;
+import itaital100.gmail.com.terutson.Excuses.ExusesFactory;
+import itaital100.gmail.com.terutson.Tools.Enums.*;
+import itaital100.gmail.com.terutson.R;
+import itaital100.gmail.com.terutson.Tools.Utils;
 
 
 public class DetailsActivity extends AppCompatActivity
@@ -27,7 +30,7 @@ public class DetailsActivity extends AppCompatActivity
         public int      currentExcuseIndex=-1;
         String          currentExcuse;
         Category        ActivityCategory;
-        ExusesFactory   myExcuseFactory = new ExusesFactory();
+        ExusesFactory myExcuseFactory = new ExusesFactory();
         HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
         Stack excusesStack = new Stack();
 
@@ -57,6 +60,7 @@ public class DetailsActivity extends AppCompatActivity
             initCopyButton();
             initforwardButton();
             initbackwardButton();
+
     }
     //-------------------------------------------------------------------------------------
     private void initExcuseTextBox()

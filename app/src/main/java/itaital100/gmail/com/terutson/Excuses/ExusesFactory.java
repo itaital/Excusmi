@@ -1,25 +1,18 @@
-package itaital100.gmail.com.terutson;
-
+package itaital100.gmail.com.terutson.Excuses;
 import java.util.Random;
-
-import static itaital100.gmail.com.terutson.ExcusesData.Exuces_meeting_female;
+import itaital100.gmail.com.terutson.Tools.Enums.*;
+import itaital100.gmail.com.terutson.Config.config;
 
 public class ExusesFactory
 {
-    Random rand = new Random();
-    int index;
-
-    public enum Category{Meeting,Work,Ex,Date,Occassion,Homework}
-    private enum Language{Hebrew,English};
-    public enum Gender{Male,Female};
-
-    static Gender selectedGender = Gender.Male;
-    private Language ExcusesLangauge = Language.Hebrew;
+    config conf = new config();
 
     //Note: the user must not get an excuse identical to the one he already have
     //      also, boundaries needs to be checked
     public  String generateNewExcuse(Category cat, int currentIndex)
     {
+        Random rand = new Random();
+        int index;
         int this_categorySize = getCategorySize(cat);
         do
         {
@@ -37,11 +30,15 @@ public class ExusesFactory
      */
     int getCategorySize(Category cat)
     {
+        Gender selectedGender = config.getSelectedGender();
        return getCategoryArray(cat,selectedGender).length;
     }
     //----------------------------------------------------------------------
     String getExcuse(Category cat, int index)
     {
+        Gender selectedGender = config.getSelectedGender();
+        Language ExcusesLangauge = config.getExcusesLangauge();
+
         //Switch the category types to return different results
         switch(cat)
             {
@@ -126,6 +123,9 @@ public class ExusesFactory
     }
     String[] getCategoryArray(Category cat, Gender gender)
     {
+        Gender selectedGender = config.getSelectedGender();
+        Language ExcusesLangauge = config.getExcusesLangauge();
+
         //Switch the category types to return different results
         switch(cat)
         {
@@ -136,7 +136,7 @@ public class ExusesFactory
                         if(gender.equals(Gender.Male))
                             return ExcusesData.Exuces_meeting;
                         else
-                            return Exuces_meeting_female;
+                            return ExcusesData.Exuces_meeting_female;
                     case English:
                         return ExcusesData.Exuces_meeting_english;
                     default:return null;

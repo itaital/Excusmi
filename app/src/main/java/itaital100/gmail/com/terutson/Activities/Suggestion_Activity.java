@@ -1,14 +1,12 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,6 +17,9 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import java.util.List;
+
+import itaital100.gmail.com.terutson.R;
+import itaital100.gmail.com.terutson.Tools.Utils;
 
 
 public class Suggestion_Activity extends AppCompatActivity {
@@ -48,6 +49,7 @@ public class Suggestion_Activity extends AppCompatActivity {
         init_editBox();
         init_ComboBox();
         init_SendButton();
+
 
         //check_New_Line();
     }

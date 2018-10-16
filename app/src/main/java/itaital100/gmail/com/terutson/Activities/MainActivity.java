@@ -1,4 +1,4 @@
-package itaital100.gmail.com.terutson;
+package itaital100.gmail.com.terutson.Activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,18 +16,27 @@ import android.widget.Button;
 import java.util.ArrayList;
 import com.google.android.gms.ads.MobileAds;
 
+
+import itaital100.gmail.com.terutson.Config.config;
+import itaital100.gmail.com.terutson.Excuses.ExusesFactory;
+import itaital100.gmail.com.terutson.R;
+import itaital100.gmail.com.terutson.Startup.startup_1;
+import itaital100.gmail.com.terutson.Tools.Utils;
+import itaital100.gmail.com.terutson.Tools.Enums.*;
+
+
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener
 {
-    //                          Categories                          //
-    Button categoryButton_meeting;        Button categoryButton_work;
-    Button categoryButton_occassion;      Button categoryButton_hw;
-    Button categoryButton_ex;             Button categoryButton_date;
+    //                                  Categories                          //
+    public Button categoryButton_meeting;        public Button categoryButton_work;
+    public Button categoryButton_event;          public Button categoryButton_hw;
+    public Button categoryButton_chore;          public Button categoryButton_date;
 
     ArrayList<Button> allCategoriesButtons = new ArrayList<Button>();    //An array to contain all categories:
 
     //                          Menu:                               //
     private DrawerLayout   myMenu_drawer;
-    private NavigationView myMenu_navigation;
+    public NavigationView myMenu_navigation;
     private Button         myMenu_btn;
 
     // Preference is a place to store all application related data that you want
@@ -138,6 +147,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                             //send messege to the next activity://
                             startIntent.putExtra(finalKey,categoryButton.getId());
 
+
                             //start activity://
                             startActivity(startIntent);
                         }
@@ -150,10 +160,10 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     {
         categoryButton_hw         =  (Button)findViewById(R.id.btn_hw);
         categoryButton_meeting    =  (Button)findViewById(R.id.btn_meeting);
-        categoryButton_ex         =  (Button)findViewById(R.id.btn_ex);
+        categoryButton_chore =  (Button)findViewById(R.id.btn_ex);
         categoryButton_work       =  (Button)findViewById(R.id.btn_work);
         categoryButton_date       =  (Button)findViewById(R.id.btn_date);;
-        categoryButton_occassion  =  (Button)findViewById(R.id.btn_occasion);
+        categoryButton_event =  (Button)findViewById(R.id.btn_occasion);
     }
     //----------------------------------------------------------------------------------------------
     private void addAllButtonsToArray(ArrayList<Button> arr)
@@ -161,9 +171,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         arr.add(categoryButton_work);
         arr.add(categoryButton_hw);
         arr.add(categoryButton_meeting);
-        arr.add(categoryButton_ex);
+        arr.add(categoryButton_chore);
         arr.add(categoryButton_date);
-        arr.add(categoryButton_occassion);
+        arr.add(categoryButton_event);
     }
     //----------------------------------------------------------------------------------------------
     //Change back button fucntionality so it will close the menu if its open
@@ -210,12 +220,13 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     {
         if(sharedInitialized) return;
         sharedPreferences = getSharedPreferences("myprefs", MODE_PRIVATE);
-        sharedInitialized =true;
+        sharedInitialized = true;
     }
     //----------------------------------------------------------------------------------------------
     private void init_gender()
     {
-        ExusesFactory.selectedGender = Utils.getSelectedGender();
+        Gender gen = Utils.getSelectedGender();
+        config.setSelectedGender(gen);
     }
     //----------------------------------------------------------------------------------------------
 }
