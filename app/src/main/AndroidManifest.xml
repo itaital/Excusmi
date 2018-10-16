@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.DetailsActivity" />
-        <activity android:name=".Activities.Suggestion_Activity"></activity>
+        <activity android:name=".Activities.Suggestion_Activity"/>
         <activity android:name=".Startup.startup_1" />
         <activity android:name=".Startup.startup_2" />
         <activity android:name=".Startup.startup_3" />

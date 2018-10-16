@@ -53,6 +53,11 @@ public class Suggestion_Activity extends AppCompatActivity {
 
         //check_New_Line();
     }
+    @Override public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
     //----------------------------------------------------------------------------------------------
     void init_editBox()
     {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -150,6 +151,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
                             //start activity://
                             startActivity(startIntent);
+                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
                         }
                     });
 
@@ -200,13 +203,15 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         {
             case R.id.nav_add_excuse:
                 myMenu_drawer.closeDrawer(GravityCompat.START);
-                //This crashes the software:
-                Intent startIntent = new Intent(getApplicationContext(),Suggestion_Activity.class);
+                Intent startIntent = new Intent(this.getApplicationContext(),Suggestion_Activity.class);
                 startActivity(startIntent);
+               overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
                 break;
             case R.id.change_gender:
+                myMenu_drawer.closeDrawer(GravityCompat.START);
                 Utils.openGenderSelectDialog(this);
-                break;
+                return true;
             case R.id.about:
                 String ourmsg = "אנחנו אריאל ואיתי בלה בלה בלה";
                 Utils.openConfirmDialog(ourmsg,"אוקיי",this);

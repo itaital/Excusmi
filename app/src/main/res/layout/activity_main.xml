@@ -82,18 +82,19 @@
 
         <TextView
             android:id="@+id/topLabel"
-            android:layout_width="341dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="52dp"
             android:includeFontPadding="true"
+            android:shadowColor="@android:color/background_dark"
+            android:shadowRadius="2"
             android:text="אני צריך תירוץ ל..."
             android:textAppearance="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle"
-            android:textColor="#214886"
-            android:textSize="35dp"
+            android:textColor="#107896"
+            android:textSize="@dimen/_30sdp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

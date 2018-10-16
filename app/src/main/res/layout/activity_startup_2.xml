@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".startup_1"
+    tools:context="Startup.startup_2"
     tools:layout_editor_absoluteY="25dp">
 
     <ImageView
@@ -78,10 +78,11 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="false"
                 android:text="תודה."
-                android:textColor="@android:color/holo_blue_light"
+                android:textColor="@android:color/holo_orange_light"
                 android:textSize="35dp"
-                android:textStyle="bold" />
+                android:textStyle="normal|bold|italic" />
 
             <TextView
                 android:id="@+id/textView6"
