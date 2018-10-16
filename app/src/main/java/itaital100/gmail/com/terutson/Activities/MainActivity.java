@@ -1,5 +1,6 @@
 package itaital100.gmail.com.terutson.Activities;
 
+///Android imports:
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
@@ -12,13 +13,12 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import java.util.ArrayList;
 import com.google.android.gms.ads.MobileAds;
 
 
+//Terutson imports:
 import itaital100.gmail.com.terutson.Config.config;
-import itaital100.gmail.com.terutson.Excuses.ExusesFactory;
 import itaital100.gmail.com.terutson.R;
 import itaital100.gmail.com.terutson.Startup.startup_1;
 import itaital100.gmail.com.terutson.Tools.Utils;
@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     public Button categoryButton_event;          public Button categoryButton_hw;
     public Button categoryButton_chore;          public Button categoryButton_date;
 
-    ArrayList<Button> allCategoriesButtons = new ArrayList<Button>();    //An array to contain all categories:
+    ArrayList<Button> allCategoriesButtons = new ArrayList<>();    //An array to contain all categories:
 
     //                          Menu:                               //
     private DrawerLayout   myMenu_drawer;
-    public NavigationView myMenu_navigation;
+    public NavigationView  myMenu_navigation;
     private Button         myMenu_btn;
 
     // Preference is a place to store all application related data that you want
@@ -160,10 +160,10 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     {
         categoryButton_hw         =  (Button)findViewById(R.id.btn_hw);
         categoryButton_meeting    =  (Button)findViewById(R.id.btn_meeting);
-        categoryButton_chore =  (Button)findViewById(R.id.btn_ex);
+        categoryButton_chore      =  (Button)findViewById(R.id.btn_ex);
         categoryButton_work       =  (Button)findViewById(R.id.btn_work);
         categoryButton_date       =  (Button)findViewById(R.id.btn_date);;
-        categoryButton_event =  (Button)findViewById(R.id.btn_occasion);
+        categoryButton_event      =  (Button)findViewById(R.id.btn_occasion);
     }
     //----------------------------------------------------------------------------------------------
     private void addAllButtonsToArray(ArrayList<Button> arr)
@@ -208,7 +208,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 Utils.openGenderSelectDialog(this);
                 break;
             case R.id.about:
-                Utils.openConfirmDialog("אנחנו אריאל ואיתי בלה בלה בלה","אוקיי",this);
+                String ourmsg = "אנחנו אריאל ואיתי בלה בלה בלה";
+                Utils.openConfirmDialog(ourmsg,"אוקיי",this);
             default:
                 return false;
         }
