@@ -24,6 +24,7 @@ public class startup_2 extends AppCompatActivity {
         final RadioButton agreeButton = findViewById(R.id.agreeBtn);
         final AppCompatActivity this_start2_Activity = this;
         final TextView thanksText =findViewById(R.id.textView2);
+        Utils.setGraphicsRegionTo("en",this);
         thanksText.setShadowLayer(2, 0, 0, Color.BLACK);
 
         nextButton.setOnClickListener(   new View.OnClickListener() {

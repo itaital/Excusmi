@@ -22,7 +22,8 @@ import itaital100.gmail.com.terutson.R;
 import itaital100.gmail.com.terutson.Tools.Utils;
 
 
-public class Suggestion_Activity extends AppCompatActivity {
+public class Suggestion_Activity extends AppCompatActivity
+{
 
     //ComboBox items:
     String[] items = {"עבודה", "פגישה", "בריחה מדייט", "מטלה", "שיעורי בית", "אירוע"};

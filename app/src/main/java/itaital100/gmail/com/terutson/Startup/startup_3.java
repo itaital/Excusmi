@@ -18,6 +18,7 @@ public class startup_3 extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup_3);
+        Utils.setGraphicsRegionTo("en",this);
         Button finishButton = findViewById(R.id.finish_button);
         final RadioButton radioButtonMale= findViewById(R.id.radioM);
         final RadioButton radioButtonFemale= findViewById(R.id.radioF);
