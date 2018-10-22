@@ -60,8 +60,10 @@ public class DetailsActivity extends AppCompatActivity
         //init components:
             initExcuseTextBox();
             initCopyButton();
-            initforwardButton();
-            initbackwardButton();
+            initForwardButton();
+            initBackwardButton();
+            initLable(ActivityCategory);
+
     }
     //-------------------------------------------------------------------------------------
     private void initExcuseTextBox()
@@ -94,7 +96,7 @@ public class DetailsActivity extends AppCompatActivity
      /*
            show next excuse that is different then the previous
        */
-    private void initforwardButton()
+    private void initForwardButton()
     {
         forward_Button = (ImageButton) findViewById(R.id.btn_forward);
 
@@ -132,7 +134,7 @@ public class DetailsActivity extends AppCompatActivity
         super.onBackPressed();
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
-    private void initbackwardButton()
+    private void initBackwardButton()
     {
         backward_Button = (ImageButton) findViewById(R.id.btn_backward);
         backward_Button.setEnabled(false);
@@ -198,6 +200,31 @@ public class DetailsActivity extends AppCompatActivity
             return Category.Date;
         }
         return null;
+    }
+
+    private void initLable(Category cat)
+    {
+        switch(cat){
+            case Homework:
+                myTopLabel.setText("אני לא יכול להגיש שיעורי בית כי:");
+                break;
+            case Meeting:
+                myTopLabel.setText("אני לא יכול להגיע לפגישה כי:");
+                break;
+            case Ex:
+                myTopLabel.setText("אני לא יכול לעשות את המטלה כי:");
+                break;
+            case Work:
+                myTopLabel.setText("אני לא יכול להגיע לעבודה כי:");
+                break;
+            case Occassion:
+                myTopLabel.setText("אני לא יכול להגיע לאירוע כי:");
+                break;
+            case Date:
+                myTopLabel.setText("אני לא יכול להגיע לדייט כי:");
+                break;
+            default: myTopLabel.setText("error in catagory");
+        }
     }
 //-------------------------------------------------------------------------------------------
 
