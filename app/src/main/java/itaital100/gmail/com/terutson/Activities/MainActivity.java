@@ -54,18 +54,20 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Initialize:
-                init_pref();
-                init_gender();
-                init_Ads();
-                init_GraphicOriention();
-                init_Categories();
-                init_Menu();
-
         if(openingForTheFirstTime())
         {
             openFirstTimeDiaolog();
         }
+        else  //Initialize:
+         {
+            init_pref();
+            init_gender();
+            init_Ads();
+            init_GraphicOriention();
+            init_Categories();
+            init_Menu();
+        }
+
     }
 //--------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------
