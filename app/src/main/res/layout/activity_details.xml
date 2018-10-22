@@ -79,7 +79,6 @@
             android:textSize="@dimen/_25sdp"
             android:textStyle="normal"
             android:typeface="serif"
-            android:barrierAllowsGoneWidgets="false"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintStart_toStartOf="@+id/textView"
