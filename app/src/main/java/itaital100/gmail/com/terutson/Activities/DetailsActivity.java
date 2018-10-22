@@ -37,6 +37,7 @@ public class DetailsActivity extends AppCompatActivity
 
     //Components:
         TextView myTextBox;
+        TextView myTopLabel;
         Button copy_Button;
         ImageButton forward_Button;
         ImageButton backward_Button;
@@ -52,6 +53,7 @@ public class DetailsActivity extends AppCompatActivity
 
         //get type of activity:
         ActivityCategory = getExcuseCategoryType();
+        myTopLabel = (TextView) findViewById(R.id.topLabel);
         mAdView = (AdView) findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
