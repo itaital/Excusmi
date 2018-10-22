@@ -62,7 +62,6 @@ public class DetailsActivity extends AppCompatActivity
             initCopyButton();
             initforwardButton();
             initbackwardButton();
-
     }
     //-------------------------------------------------------------------------------------
     private void initExcuseTextBox()
