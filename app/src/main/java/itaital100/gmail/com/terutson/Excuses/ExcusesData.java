@@ -126,10 +126,45 @@ public class ExcusesData
     //Hebrew - Male
     public static String[] Exuces_work =
             {
+                    "הצינור התפוצץ. כל הבית מוצף והאינטסלטור מגיע רק מאוחר יותר",
+                    "יש לי בדיקה חשובה אצל רופא לעשות",
+                    "מצטער, יש לנו מקרה חירום משפחתי",
+                    "יש לי שפעת",
+                    "הילד שלי לא מרגיש טוב, אני לוקח אותו לרופא",
+                    "אני לא מרגיש כל כך טוב",
+                    "אני צריך לקחת את אמא שלי לבית חולים",
+                    "אני צריך לקחת את חברה שלי לבית חולים להוציא את התפרים",
+                    "ננעלתי בבית, אין לי מפתח",
+                    "עבדתי עד מאוחר אתמול, אני אגיע באיחור קל",
+                    "יש תאונת דרכים, אני אתעכב",
+                    "הרכבת נעצרה. לא ברור עדיין למה. כנראה שאתעכב",
+                    "יש לי פגישה עם השיננית",
+                    "הכלב שלי נדרס",
+                    "יש לי שלשולים קשים, מרותק לבית",
+                    "הבייביסטר עושה לי בעיות, אני מחפש מישהוא שישמור על הילדים",
+                    "הרכב לא מתניע",
+                    "יש לי טיפול שורש",
+                    "יש לי פגישה עם הרופא",
+                    "היי, קמתי עם חום היום",
+                    "אני חושב שחטפתי איזה וירוס",
+                    "יש לי הלוויה",
+                    "יש לי סחרחורות והקאות",
+                    "הרמתי את המיטה ונתפס לי הגב"
+            };
+    //Hebrew - Female
+    public static String[] Exuces_work_female =
+            {
+                    "Exuces_work4",
+                    "Exuces_work5"
+            };
+    //English:
+    public static String[] Exuces_work_english =
+            {
+                    "I may be called in for jury duty",
                     "Plumbing problems",
                     "I have an appointment for an important medical examination that can not be delayed",
                     "I'm sorry, we have a family emergency.",
-                    "I have the flu, it's probably contagious",
+                    "I got the flu, it's probably contagious",
                     "My child is not feeling well, Im taking him to the doctor",
                     "I'm not feeling so well",
                     "I have to take my mother to the hospital",
@@ -144,7 +179,6 @@ public class ExcusesData
                     "The babysitter is absent, I'm looking for someone to watch over the kids",
                     "The car wont start",
                     "I have root canal treatment",
-                     "I got the flu", //check this out
                     "I have a doctor appointment",
                     "Hey, I woke up today with a fever today",
                     "I have to take my mother to the hospital",
@@ -152,19 +186,6 @@ public class ExcusesData
                     "I have a funeral...",
                     "I have dizziness and vomiting",
                     "I picked up the bed and my back was hurt"
-            };
-    //Hebrew - Female
-    public static String[] Exuces_work_female =
-            {
-                    "Exuces_work4",
-                    "Exuces_work5"
-            };
-    //English:
-    public static String[] Exuces_work_english =
-            {
-                    "I may be called in for jury duty",
-                    "Exuces_work6",
-                    "Exuces_work7"
             };
 
 //##################################################################################################

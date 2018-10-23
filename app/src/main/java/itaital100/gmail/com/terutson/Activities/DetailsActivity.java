@@ -27,9 +27,9 @@ import itaital100.gmail.com.terutson.Tools.Utils;
 public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
-        public int      currentExcuseIndex=-1;
-        String          currentExcuse;
-        Category        ActivityCategory;
+        static Category  ActivityCategory;
+        public int       currentExcuseIndex=-1;
+        String           currentExcuse;
         ExusesFactory myExcuseFactory = new ExusesFactory();
         HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
         Stack excusesStack = new Stack();
@@ -52,7 +52,6 @@ public class DetailsActivity extends AppCompatActivity
         setContentView(R.layout.activity_details);
 
         //get type of activity:
-        ActivityCategory = getExcuseCategoryType();
         myTopLabel = (TextView) findViewById(R.id.topLabel);
         mAdView = (AdView) findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -164,42 +163,6 @@ public class DetailsActivity extends AppCompatActivity
                         myTextBox.setText(currentExcuse);
             }
         });
-    }
-
-
-    //-------------------------------------------------------------------------------------------
-    /*
-        Checks if this activity got any messege about the type of the category that it is meant for.
-        Output: if messege is valid -> returns the category type
-                else                -> returns null;
-     */
-    private Category getExcuseCategoryType()
-    {
-        if(getIntent().hasExtra("com.gmail.itaital100.hw"))
-        {
-            return Category.Homework;
-        }
-        if(getIntent().hasExtra("com.gmail.itaital100.meeting"))
-        {
-            return Category.Meeting;
-        }
-        if(getIntent().hasExtra("com.gmail.itaital100.ex"))
-        {
-            return Category.Ex;
-        }
-        if(getIntent().hasExtra("com.gmail.itaital100.work"))
-        {
-            return Category.Work;
-        }
-        if(getIntent().hasExtra("com.gmail.itaital100.occasion"))
-        {
-            return Category.Occassion;
-        }
-        if(getIntent().hasExtra("com.gmail.itaital100.date"))
-        {
-            return Category.Date;
-        }
-        return null;
     }
 
     private void initLable(Category cat)

@@ -140,17 +140,23 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                         public void onClick(View view) {
                             Intent startIntent = new Intent(getApplicationContext(), DetailsActivity.class);
 
-                            //get category name and build a key messege to send the next activity://
+                            //get category based on the button pressed
                             String fullResourceName = getResources().getResourceName(categoryButton.getId());
                             String categoryName = fullResourceName.substring(fullResourceName.lastIndexOf("_")+1);
-                            String prefix = "com.gmail.itaital100.";
-                            String finalKey = prefix + categoryName; //--> final key messege
 
-                            //send messege to the next activity://
-                            startIntent.putExtra(finalKey,categoryButton.getId());
+                            Category btnCategory = null;
+                            switch(categoryName)
+                            {
+                                case "work":       btnCategory = Category.Work;      break;
+                                case "hw":         btnCategory = Category.Homework;  break;
+                                case "meeting":    btnCategory = Category.Meeting;   break;
+                                case "ex":         btnCategory = Category.Ex;        break;
+                                case "occasion":   btnCategory = Category.Occassion; break;
+                                case "date":       btnCategory = Category.Date;      break; }
 
+                            DetailsActivity.ActivityCategory = btnCategory;
 
-                            //start activity://
+                                    //start activity://
                             startActivity(startIntent);
                             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
