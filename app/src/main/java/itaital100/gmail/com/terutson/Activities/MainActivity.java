@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                             String fullResourceName = getResources().getResourceName(categoryButton.getId());
                             String categoryName = fullResourceName.substring(fullResourceName.lastIndexOf("_")+1);
 
+                            /*
                             Category btnCategory = null;
                             switch(categoryName)
                             {
@@ -155,11 +156,11 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                                 case "date":       btnCategory = Category.Date;      break; }
 
                             DetailsActivity.ActivityCategory = btnCategory;
-
-                                    //start activity://
+                            */
+                            startIntent.putExtra(categoryName,categoryButton.getId());
+                            //start activity://
                             startActivity(startIntent);
                             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
                         }
                     });
 

@@ -27,7 +27,7 @@ import itaital100.gmail.com.terutson.Tools.Utils;
 public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
-        static Category  ActivityCategory;
+        Category  ActivityCategory;
         public int       currentExcuseIndex=-1;
         String           currentExcuse;
         ExusesFactory myExcuseFactory = new ExusesFactory();
@@ -56,6 +56,7 @@ public class DetailsActivity extends AppCompatActivity
         mAdView = (AdView) findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        ActivityCategory = getExcuseCategoryType();
         //init components:
             initExcuseTextBox();
             initCopyButton();
@@ -190,5 +191,39 @@ public class DetailsActivity extends AppCompatActivity
         }
     }
 //-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+    /*
+        Checks if this activity got any messege about the type of the category that it is meant for.
+        Output: if messege is valid -> returns the category type
+                else                -> returns null;
+     */
+private Category getExcuseCategoryType()
+{
+    if(getIntent().hasExtra("hw"))
+    {
+        return Category.Homework;
+    }
+    if(getIntent().hasExtra("meeting"))
+    {
+        return Category.Meeting;
+    }
+    if(getIntent().hasExtra("ex"))
+    {
+        return Category.Ex;
+    }
+    if(getIntent().hasExtra("work"))
+    {
+        return Category.Work;
+    }
+    if(getIntent().hasExtra("occasion"))
+    {
+        return Category.Occassion;
+    }
+    if(getIntent().hasExtra("date"))
+    {
+        return Category.Date;
+    }
+    return null;
+    }
 
 }
