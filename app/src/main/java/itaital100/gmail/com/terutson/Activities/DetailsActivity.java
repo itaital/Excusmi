@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.content.ClipboardManager;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Stack;
 
@@ -33,6 +34,7 @@ public class DetailsActivity extends AppCompatActivity
         ExusesFactory myExcuseFactory = new ExusesFactory();
         HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
         Stack excusesStack = new Stack();
+        ArrayList<Integer> index = new ArrayList<Integer>();
 
 
     //Components:
@@ -57,6 +59,8 @@ public class DetailsActivity extends AppCompatActivity
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         ActivityCategory = getExcuseCategoryType();
+        for(int i=0; i< ExusesFactory.getCategorySize(ActivityCategory); i++){index.add(i);}
+
         //init components:
             initExcuseTextBox();
             initCopyButton();
@@ -106,11 +110,18 @@ public class DetailsActivity extends AppCompatActivity
             {
                 //generate new Excuse
                     String newExcuse = "";
+                    if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-1)
+                    {
+                        forward_Button.setEnabled(false);
+                       // forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
+                        return;
+                    }
+
                      do
                      {
                          newExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
                      }
-                     while(currentExcuse == newExcuse);
+                     while(currentExcuse == newExcuse || excusesStack.search(newExcuse) != -1);
 
                      //push to stack while preventing duplicates:
                    //  if( !currentExcusesInStack.contains(currentExcuse) )
@@ -162,6 +173,9 @@ public class DetailsActivity extends AppCompatActivity
                         excusesStack.pop();
                         currentExcusesInStack.remove(currentExcuse);
                         myTextBox.setText(currentExcuse);
+                    forward_Button.setEnabled(true);
+                    forward_Button.setBackgroundResource(R.drawable.forward_button);
+
             }
         });
     }

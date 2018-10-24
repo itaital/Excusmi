@@ -28,7 +28,7 @@ public class ExusesFactory
      * Input: Category
      * Output: return the number of possible exuses within given category
      */
-    int getCategorySize(Category cat)
+    public static int getCategorySize(Category cat)
     {
         Gender selectedGender = config.getSelectedGender();
        return getCategoryArray(cat,selectedGender).length;
@@ -121,7 +121,7 @@ public class ExusesFactory
                     return  null;
             }
     }
-    String[] getCategoryArray(Category cat, Gender gender)
+    static String[] getCategoryArray(Category cat, Gender gender)
     {
         Gender selectedGender = config.getSelectedGender();
         Language ExcusesLangauge = config.getExcusesLangauge();
