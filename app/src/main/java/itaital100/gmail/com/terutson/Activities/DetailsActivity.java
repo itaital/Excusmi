@@ -2,6 +2,7 @@ package itaital100.gmail.com.terutson.Activities;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -29,13 +30,12 @@ public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
         Category  ActivityCategory;
-        public int       currentExcuseIndex=-1;
-        String           currentExcuse;
+        public int    currentExcuseIndex = -1;
+        String        currentExcuse;
         ExusesFactory myExcuseFactory = new ExusesFactory();
         HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
         Stack excusesStack = new Stack();
         ArrayList<Integer> index = new ArrayList<Integer>();
-
 
     //Components:
         TextView myTextBox;
@@ -49,9 +49,10 @@ public class DetailsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Utils.disableLandscapeMode(this);
         //sets graphic to be fixed the same as in the android studio editor
-        Utils.setGraphicsRegionTo("eng",this);
         setContentView(R.layout.activity_details);
+        Utils.setGraphicsRegionTo("eng",this);
 
         //get type of activity:
         myTopLabel = (TextView) findViewById(R.id.topLabel);
@@ -110,6 +111,7 @@ public class DetailsActivity extends AppCompatActivity
             {
                 //generate new Excuse
                     String newExcuse = "";
+
                     if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-1)
                     {
                         forward_Button.setEnabled(false);
