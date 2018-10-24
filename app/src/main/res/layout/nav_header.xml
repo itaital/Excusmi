@@ -14,7 +14,8 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/terutson_icon" />
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_launcher5" />
 
     <TextView
         android:layout_width="match_parent"

@@ -225,5 +225,4 @@ private Category getExcuseCategoryType()
     }
     return null;
     }
-
 }
