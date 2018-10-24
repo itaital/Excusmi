@@ -214,12 +214,17 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 Intent startIntent = new Intent(this.getApplicationContext(),Suggestion_Activity.class);
                 startActivity(startIntent);
                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
                 break;
             case R.id.change_gender:
                 myMenu_drawer.closeDrawer(GravityCompat.START);
                 Utils.openGenderSelectDialog(this);
                 return true;
+            case R.id.nav_add_report:
+                myMenu_drawer.closeDrawer(GravityCompat.START);
+                startIntent = new Intent(this.getApplicationContext(),Report_Activity.class);
+                startActivity(startIntent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
             case R.id.about:
                 String ourmsg = "תירוצון הוא מחולל תירוצים. מטרתו היא לספק תירוצים עבור מגוון רחב מספיק של סיטואציות מחיי היום יום."+
                         "\n"+"אנו מודים לכם על השימוש באפליקציה ומקווים שהיא תועיל לכם. "+"" +
