@@ -39,16 +39,19 @@ public class DetailsActivity extends AppCompatActivity
 
     //Components:
         TextView myTextBox;
-        TextView myTopLabel;
+        TextView myTextBox2;
+    TextView myTopLabel;
         Button copy_Button;
         ImageButton forward_Button;
         ImageButton backward_Button;
         AdView mAdView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         Utils.disableLandscapeMode(this);
         //sets graphic to be fixed the same as in the android studio editor
         setContentView(R.layout.activity_details);
@@ -77,6 +80,7 @@ public class DetailsActivity extends AppCompatActivity
         myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
         currentExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
         myTextBox.setText(currentExcuse);
+
     }
     //-----------------------------------------------------------------------
       /*
@@ -115,7 +119,7 @@ public class DetailsActivity extends AppCompatActivity
                     if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-1)
                     {
                         forward_Button.setEnabled(false);
-                       // forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
+                       forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
                         return;
                     }
 
@@ -139,6 +143,10 @@ public class DetailsActivity extends AppCompatActivity
                 //Theres no reason to keep the backward button  disabled if the stack isnt empty:
                 backward_Button.setEnabled(true);
                 backward_Button.setBackgroundResource(R.drawable.backwards_button);
+                myTextBox.setMovementMethod(null);
+
+                myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
+
             }
         });
     }
@@ -177,6 +185,10 @@ public class DetailsActivity extends AppCompatActivity
                         myTextBox.setText(currentExcuse);
                     forward_Button.setEnabled(true);
                     forward_Button.setBackgroundResource(R.drawable.forward_button);
+                myTextBox.setMovementMethod(null);
+
+                myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
+
 
             }
         });
