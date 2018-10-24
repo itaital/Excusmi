@@ -214,12 +214,17 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 Intent startIntent = new Intent(this.getApplicationContext(),Suggestion_Activity.class);
                 startActivity(startIntent);
                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
                 break;
             case R.id.change_gender:
                 myMenu_drawer.closeDrawer(GravityCompat.START);
                 Utils.openGenderSelectDialog(this);
                 return true;
+            case R.id.nav_add_report:
+                myMenu_drawer.closeDrawer(GravityCompat.START);
+                startIntent = new Intent(this.getApplicationContext(),Report_Activity.class);
+                startActivity(startIntent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
             case R.id.about:
                 String ourmsg = "אנחנו אריאל ואיתי בלה בלה בלה";
                 Utils.openConfirmDialog(ourmsg,"אוקיי",this);
