@@ -12,7 +12,7 @@
         android:id="@+id/imageView4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#363e4a"
+        android:background="@drawable/vfvfv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -23,8 +23,8 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="0dp"
-        android:layout_height="83dp"
-        android:src="@android:color/darker_gray"
+        android:layout_height="85dp"
+        android:background="#E2E2E2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
