@@ -275,10 +275,10 @@ public class ExcusesData
                     "אם הייתי אהוב על ידך לא הייתי מתבקש לעשות את זה",
                     "הגרון שלי כואב",
                     "עבדתי קשה מידי בלילה, אני לא מסוגל לעשות כלום",
-                    "שכחתי, סליחה. אני אעשה את זה מאוחר מידי. אני יודע שאמרתי את זה אתמול אבל הפעם אני באמת מתכוון לזה",
+                    "שכחתי, סליחה. אני אעשה את זה מאוחר יותר. אני יודע שאמרתי את זה אתמול אבל הפעם אני באמת מתכוון לזה",
                     "תכננתי לעשות את זה אחר כך, כרגע אני מפוצץ בעבודה להגיש",
                     "אני חייב להירשם... אין זמן",
-                    "המפרק כואב לי",
+                    "המרפק כואב לי",
                     "יש לי סחרחורת והקאות"
             };
 
@@ -293,26 +293,38 @@ public class ExcusesData
                     "בוא נצא החוצה למסעדה",
                     "היה לי יום ארוך היום",
                     "יש לי עבודה לעשות",
-                    "אני הולך לישון, חייב להשלים שעות שינה",
-                    "חייב לעזור לחבר במשבר",
+                    "אני הולכת לישון, חייבת להשלים שעות שינה",
+                    "חייבת לעזור לחברה במשבר",
                     "אם הייתי אהובה על ידך לא הייתי מתבקשת לעשות את זה",
                     "הגרון שלי כואב",
-                    "עבדתי קשה מידי בלילה, אני לא מסוגל לעשות כלום",
-                    "שכחתי, סליחה. אני אעשה את זה מאוחר מידי. אני יודע שאמרתי את זה אתמול אבל הפעם אני באמת מתכוון לזה",
-                    "תכננתי לעשות את זה אחר כך, כרגע אני מפוצץ בעבודה להגיש",
-                    "אני חייב להירשם... אין זמן",
-                    "המפרק כואב לי",
+                    "עבדתי קשה מידי בלילה, אני לא מסוגלת לעשות כלום",
+                    "שכחתי, סליחה. אני אעשה את זה מאוחר יותר. אני יודעת שאמרתי את זה אתמול אבל הפעם אני באמת מתכוונת לזה",
+                    "תכננתי לעשות את זה אחר כך, כרגע אני מפוצצת בעבודה להגיש",
+                    "אני חייבת להירשם...אין זמן",
+                    "המרפק כואב לי",
                     "יש לי סחרחורת והקאות"
             };
     //English:
     public static String[] Exuces_ex_english =
             {
-                    "Exuces_ex9",
-                    "Exuces_ex10",
-                    "Exuces_ex11",
-                    "Exuces_ex12"
+                    "I hurt my arm the other day, I cant do it",
+                    "I'll do it later, right now I'm studying really hard and don't wanna stop",
+                    "I have a migraine",
+                    "My stomach aches",
+                    "I've completely forgotten about it",
+                    "Let's go outside to the restaurant",
+                    "I had a long day today",
+                    "I have work to do",
+                    "I'm  going to bed, I did not sleep at all tonight",
+                    "I must help a friend in a crisis",
+                    "if you loved me you wouldnt ask me to do it",
+                    "my throat hurts",
+                    "I worked too hard last night, I cant do anything",
+                    "I forgot about it, sorry. I'll do it later. I know I said it yesterday but this time I really mean it",
+                    "I planned to do it later, right now I'm blown up with all this work",
+                    "I have to register ... I dont have time",
+                    "the elbow hurts me"
             };
-
 
 //##################################################################################################
 
@@ -337,7 +349,7 @@ public class ExcusesData
                     "אני לא חושב שאנחנו מתאימים אחד לשני אבל בהצלחה לך",
                     "יש פה מקרה חירום בעבודה, אני חייב לזוז",
                     "יש לי מיגנרה חזקה עכשיו",
-                    "אחותי הקטנה חולה אני צריכה לטפל בה",
+                    "אחותי הקטנה חולה אני צריך לטפל בה",
                     "האקסית המשוגעת שלי פה, אני חייב לצאת מפה",
                     "הכלב שלי אכל משהוא לא טוב, לוקח אותו דחוף לוטרינר",
                     "אה, לא ידעת שיש לי חברה?",
@@ -437,23 +449,49 @@ public class ExcusesData
                     "שכחתי את המחברת באוטו של אמא שלי ועכשיו היא במשרד",
                     "המחברת שלי נרטבה",
                     "הספר נשאר לי בתא",
-                    "משהוא נדפק לי במחשב, ואני לא מצליח להיכנס לאתר",
+                    "משהוא נדפק לי במחשב, ואני לא מצליח להיכנס לאתר"
             };
     //Hebrew - Female
     public static String[] Exuces_hw_female =
             {
                     "יש לי כאבים בצד",
-                    "hw5",
-                    "hw6",
-                    "hw7",
-                    "hw8"
+                    "חשבתי שצריך לעשות רק עד עמוד 21",
+                    "שכחתי את המחברת בבית",
+                    "לא הבנתי את החומר, אפשר הסבר נוסף בהפסקה?",
+                    "אני אגיד לך את האמת - שכחתי מזה",
+                    "התקשרתי ל...הוא התבלבל ואמר שאין שיעורים",
+                    "התנדבתי בבית אבות",
+                    "עשינו יומולדת 70 לסבא שלי",
+                    "הייתי חולה",
+                    "הייתי אצל רופא",
+                    "יש לי 2 מחברות למקצוע והבאתי את הלא נכונה",
+                    "המחשב שלי נכבה והעבודה לא נשמרה",
+                    "אני חושבת שלא הייתי כשחילקת את השיעורי בית",
+                    "המחברת שלי אצל מישהוא אחר",
+                    "שכחתי את המחברת באוטו של אמא שלי ועכשיו היא במשרד",
+                    "המחברת שלי נרטבה",
+                    "הספר נשאר לי בתא",
+                    "משהוא נדפק לי במחשב, ואני לא מצליחה להיכנס לאתר"
             };
     //English:
     public static String[] Exuces_hw_english =
             {
-                    "hw10",
-                    "hw11",
-                    "hw12",
-                    "hw13"
+                    "I misunderstood the homework task and didnt do all the pages",
+                    "I forgot the notebook at home",
+                    "I did not understand the material, could you help more during the break?",
+                    "I'll tell you the truth - I forgot about it",
+                    "I called ... He got confused and said there were no lessons",
+                    "I volunteered at a nursing home",
+                    "my grandpa had his 70th birthday and we celebrated him",
+                    "I was sick",
+                    "I was at a doctor's",
+                    "I have 2 notebooks for this class and I brought the wrong one",
+                    "My computer went out and my work was not saved",
+                    "I think I wasnt present when you brought the homework",
+                    "My notebook is with somebody else",
+                    "I forgot the notebook in my mother's car and now she's in the office",
+                    "My notebook got wet",
+                    "The book remained in my locker",
+                    "My computer doesn't function well, and I cant log in"
             };
 }

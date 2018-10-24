@@ -127,7 +127,7 @@ public class DetailsActivity extends AppCompatActivity
 
                      //push to stack while preventing duplicates:
                    //  if( !currentExcusesInStack.contains(currentExcuse) )
-                   // {
+                // {
                         //After we got the new Excuse:
                         excusesStack.push(currentExcuse);
                         currentExcusesInStack.add(currentExcuse);
