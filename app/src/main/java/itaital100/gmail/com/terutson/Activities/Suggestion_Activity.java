@@ -40,12 +40,12 @@ public class Suggestion_Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Utils.disableLandscapeMode(this);
         setContentView(R.layout.activity_suggestion);
         mAdView = (AdView) findViewById(R.id.adView1);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         Utils.setGraphicsRegionTo("eng",this);
-        System.out.println("debug: .xml loaded");
         //init all components:
         init_editBox();
         init_ComboBox();

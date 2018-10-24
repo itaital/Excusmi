@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Utils.disableLandscapeMode(this);
         setContentView(R.layout.activity_main);
-
+        Utils.setGraphicsRegionTo("eng",this);
         //initialize:
             init_pref();
             init_gender();

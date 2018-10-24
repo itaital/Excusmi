@@ -3,6 +3,7 @@ package itaital100.gmail.com.terutson.Tools;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -46,6 +47,12 @@ public class Utils
         config.locale = locale;
         activity.getBaseContext().getResources().updateConfiguration(config,
                 activity.getBaseContext().getResources().getDisplayMetrics());
+    }
+    //----------------------------------------------------------------------------------------------
+    public static void disableLandscapeMode(AppCompatActivity activity)
+    {
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     }
     //----------------------------------------------------------------------------------------------
     public static void openConfirmDialog(String MainMsg, String confirmMsg, AppCompatActivity activity)

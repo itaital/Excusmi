@@ -38,6 +38,7 @@ public class Report_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Utils.disableLandscapeMode(this);
         setContentView(R.layout.activity_report_);
         mAdView = (AdView) findViewById(R.id.adView1);
         AdRequest adRequest = new AdRequest.Builder().build();
