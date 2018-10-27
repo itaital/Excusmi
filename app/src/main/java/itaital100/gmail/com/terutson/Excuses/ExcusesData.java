@@ -361,18 +361,64 @@ public class ExcusesData
     //Hebrew - Female
     public static String[] Exuces_date_female =
             {
-                    "יש לי בחילות, קיבלתי",
-                    "Exuces_date6",
-                    "Exuces_date7",
-                    "Exuces_date8"
+                    "נשברו לי המשקפיים, אני הולכת לתקן אותם",
+                    "דרסו לי את הכלב!",
+                    "תשמע, אני אהיה איתך כנה. אני לא רואה את זה מתקדם לשום מקום",
+                    "אני צריכה לקום מוקדם מחר",
+                    "שכחתי להאכיל את החתול שלי",
+                    "נראלי יש לי הרעלת מזון",
+                    "אני לא מוכנה למערכת יחסים כרגע",
+                    "יש לי שלשול",
+                    "צריכה לאסוף חברה שהטרמפ שלה הבריזה לה מהרכבת",
+                    "אני חושבת שזה לא יילך בינינו, אני רוצה שנהיה רק חברים",
+                    "אני לא רוצה לפגוע בחברות שלנו",
+                    "יש לי פוביה מאנשים עם השם שלך",
+                    "אני בפיגור בחומר והמבחן שלי מחרותיים",
+                    "הבייביסטר שלי הבריזה לי ואני חייבת לשמור על הילדים",
+                    "נפרדתי לא מזמן מקשר רציני זה עדיין טרי בשבילי לצאת לדייטים",
+                    "אני לא חושבת שאנחנו מתאימים אחד לשני אבל בהצלחה לך",
+                    "יש פה מקרה חירום בעבודה, אני חייבת לזוז",
+                    "יש לי מיגנרה חזקה עכשיו",
+                    "אחותי הקטנה חולה אני צריכה לטפל בה",
+                    "האקס המשוגע שלי פה, אני חייבת לצאת מפה",
+                    "הכלב שלי אכל משהוא לא טוב, לוקחת אותו דחוף לוטרינר",
+                    "אה, לא ידעת שיש לי חבר?",
+                    "שיכורה מידי כדי להמשיך",
+                    "אירוע חירום משפחתי",
+                    "החלטתי שאני לא נמשכת לגברים יותר",
+                    "תשמע, האקס שלי חזרה לתמונה ביומיים האחרונים ואני רוצה לתת לזה צ'אנס"
+
             };
     //English:
     public static String[] Exuces_date_english =
             {
-                    "Exuces_date10",
-                    "Exuces_date11",
-                    "Exuces_date12",
-                    "Exuces_date13"
+                    "I've broken my glasses, I'm going to fix them",
+                    "They ran my dog!",
+                    "Listen, I'll be honest with you. I do not see it getting anywhere",
+                    "I have to get up early tomorrow",
+                    "I forgot to feed my cat",
+                    "I have food poisoning",
+                    "I'm not ready for a relationship right now",
+                    "I have diarrhea",
+                    "I need to pick up a friend",
+                    "I think it will not work between us. I want us to be just friends",
+                    "I do not want to hurt our friendship",
+                    " I have a phobia from people with your name",
+                    "I'm behind my studies and my test tomorrow",
+                    "My babysitter ditch me, and I need to be with the kids",
+                    "I just broke up with a serious relationship. It's still fresh for me to go on dates",
+                    "I do not think we good for each other but good luck to you",
+                    "There's an emergency at work, I have to go",
+                    "I have a strong headache now",
+                    "My little sister is sick and I have to take care of her",
+                    "My crazy ex here, I've got to get out of here",
+                    "My dog ate something that was not good, I took it urgently to the veterinarian",
+                    "Oh, you did not know that I had a girlfriend?",
+                    "Too drunk to move",
+                    "Family emergency",
+                    "I decided I was not attracted to women anymore",
+                    " Listen, my ex been back the last two days and I want to give it a chance."
+
             };
 
 //##################################################################################################
