@@ -391,35 +391,34 @@ public class ExcusesData
             };
     //English:
     public static String[] Exuces_date_english =
-            {
-                    "I broke my glasses, I'm going to fix them",
-                    "my dog was run over",
-                    "I'll be honest with you. I do not see it getting anywhere",
-                    "I have to get up early tomorrow",
-                    "I forgot to feed my cat",
-                    "I have food poisoning",
-                    "I'm not ready for a relationship right now",
-                    "I have diarrhea",
-                    "I need to pick up a friend",
-                    "I think that it wont work between us. I want us to be just friends",
-                    "I do not want to hurt our friendship",
-                    "I have a phobia from people with your name",
-                    "I'm behind my studies and my test is tomorrow",
-                    "my babysitter ditched me, and I need to be with the kids",
-                    "I had just broke up from a serious relationship, It's still fresh for me to go on dates",
-                    "I dont think that we make a good fit for each other and I wish you the best",
-                    "There's an emergency at work, I have to go",
-                    "I'm having a strong headache at the moment",
-                    "my sister is sick and I have to take care of her",
-                    "my crazy ex is here, I've got to get out of here",
-                    "my dog ate something bad, I took it to the veterinarian",
-                    "oh, didnt you know that I have a girlfriend?",
-                    "I'm too drunk to move",
-                    "family emergency",
-                    "I decided I'm gay",
-                    "look, my ex been back the last two days and I want to give it a chance"
-
-            };
+     {
+                "I've broken my glasses, I'm going to fix them",
+                "They ran my dog!",
+                "Listen, I'll be honest with you. I do not see it getting anywhere",
+                "I have to get up early tomorrow",
+                "I forgot to feed my cat",
+                "I have food poisoning",
+                "I'm not ready for a relationship right now",
+                "I have diarrhea",
+                "I need to pick up a friend",
+                "I think it will not work between us. I want us to be just friends",
+                "I do not want to hurt our friendship",
+                " I have a phobia from people with your name",
+                "I'm behind my studies and my test tomorrow",
+                "My babysitter ditch me, and I need to be with the kids",
+                "I just broke up with a serious relationship. It's still fresh for me to go on dates",
+                "I do not think we good for each other but good luck to you",
+                "There's an emergency at work, I have to go",
+                "I have a strong headache now",
+                "My little sister is sick and I have to take care of her",
+                "My crazy ex here, I've got to get out of here",
+                "My dog ate something that was not good, I took it urgently to the veterinarian",
+                "Oh, you did not know that I had a girlfriend?",
+                "Too drunk to move",
+                "Family emergency",
+                "I decided I was not attracted to women anymore",
+                " Listen, my ex been back the last two days and I want to give it a chance."
+        };
 //##################################################################################################
 
     //@@@@@@@@@@@@                      Occassion:                 @@@@@@@@@@@@@@@@//

@@ -77,15 +77,15 @@ public class Report_Activity extends AppCompatActivity {
     protected void sendEmail() {
         if(myEditBox.length() ==0)
         {
-            Utils.openConfirmDialog("נא להכניס בעיה בבקשה","אישור",this);
+            Utils.openConfirmDialog("Please enter an issue first","Okay",this);
             return;
         }
         else
         {
             String SmyEditBox = myEditBox.getText().toString();
             String[] email_AddressToSend = {"terutson@gmail.com"};
-            String email_subject = "Hey Terutson support, Check out my Problem ! " ;
-            String email_content = "הבעיה:" + "\n"  + SmyEditBox;
+            String email_subject = "Hey Excusmi support, heres a small issue... " ;
+            String email_content = "The issue:" + "\n"  + SmyEditBox;
 
             shareToGMail(email_AddressToSend,
                     email_subject,

@@ -36,7 +36,7 @@
         android:layout_marginBottom="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="האפליקציה שתעזור לכם למצוא תירוצים"
+        android:text="A simple app for finding excuses"
         android:textSize="@dimen/_30sdp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/logo_white" />
+        app:srcCompat="@drawable/logo_white_en" />
 
     <Button
         android:id="@+id/next_button"
@@ -65,7 +65,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="המשך"
+        android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -216,10 +216,10 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 startActivity(startIntent);
                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
-            case R.id.change_gender:
-                myMenu_drawer.closeDrawer(GravityCompat.START);
-                Utils.openGenderSelectDialog(this);
-                return true;
+           // case R.id.change_gender:
+           //     myMenu_drawer.closeDrawer(GravityCompat.START);
+           //     Utils.openGenderSelectDialog(this);
+            //    return true;
             case R.id.nav_add_report:
                 myMenu_drawer.closeDrawer(GravityCompat.START);
                 startIntent = new Intent(this.getApplicationContext(),Report_Activity.class);
@@ -227,11 +227,12 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
             case R.id.about:
-                String ourmsg = "תירוצון הוא מחולל תירוצים. מטרתו היא לספק תירוצים עבור מגוון רחב מספיק של סיטואציות מחיי היום יום."+
-                        "\n"+"אנו מודים לכם על השימוש באפליקציה ומקווים שהיא תועיל לכם. "+"" +
-                        "\n"+ "אנו מאד קשובים לכל ביקורת שהיא, ומסתכלים על כל הצעה בכובד ראש. "+
-                        "\n" + "המשך שימוש נעים.";
-                Utils.openConfirmDialog(ourmsg,"אוקיי",this);
+                String ourmsg = "Excusmi is an excuse provider.\n" +
+                        "its purpose is to provide excuses for a wide range of situations from everyday life.\n" +
+                        "Thank you for using this app, we hope that you will find it useful.\n" +
+                        "We are open to any criticism, so, please, feel free to do so.\n" +
+                        "\nThank you and have a nice day.";
+                Utils.openConfirmDialog(ourmsg,"Okay",this);
             default:
                 return false;
         }

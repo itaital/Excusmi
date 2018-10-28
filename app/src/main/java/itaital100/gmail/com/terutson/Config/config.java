@@ -5,7 +5,7 @@ import itaital100.gmail.com.terutson.Tools.Enums.*;
 public class config
 {
     private static Gender selectedGender = Gender.Male; // default value
-    private static Language ExcusesLangauge = Language.Hebrew;
+    private static Language ExcusesLangauge = Language.English;
 
     public static void setSelectedGender(Gender gen)
     {

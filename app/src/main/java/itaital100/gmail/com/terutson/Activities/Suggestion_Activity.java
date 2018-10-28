@@ -26,7 +26,7 @@ public class Suggestion_Activity extends AppCompatActivity
 {
 
     //ComboBox items:
-    String[] items = {"עבודה", "פגישה", "בריחה מדייט", "מטלה", "שיעורי בית", "אירוע"};
+    String[] items = {"Work", "Meeting", "Date escape", "Chore", "Homework", "Event"};
     Spinner myComboBox;
     //email:
     Button btn_sendEmail;
@@ -91,7 +91,7 @@ public class Suggestion_Activity extends AppCompatActivity
     protected void sendEmail() {
         if(myEditBox.length() ==0)
         {
-            Utils.openConfirmDialog("נא להכניס תירוץ בבקשה","אישור",this);
+            Utils.openConfirmDialog("Please enter an excuse first","Okay",this);
             return;
         }
         else
@@ -99,8 +99,8 @@ public class Suggestion_Activity extends AppCompatActivity
             String comboTxt = myComboBox.getSelectedItem().toString();
             String SmyEditBox = myEditBox.getText().toString();
             String[] email_AddressToSend = {"terutson@gmail.com"};
-            String email_subject = "Hey Terutson support, Check out my great Excuse ! " ;
-            String email_content = "הצעה לתירוץ חדש:" + "\n" + "קטגוריה: " + comboTxt +"\n" + SmyEditBox;
+            String email_subject = "Hey Excusmi support, Check out my great Excuse ! " ;
+            String email_content = "Suggestion:" + "\n" + "Category: " + comboTxt +"\n" + SmyEditBox;
 
             shareToGMail(email_AddressToSend,
                          email_subject,

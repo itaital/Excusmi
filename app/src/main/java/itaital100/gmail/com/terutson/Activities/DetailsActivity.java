@@ -99,7 +99,7 @@ public class DetailsActivity extends AppCompatActivity
                 ClipData clip = ClipData.newPlainText("text label", myTextBox.getText());
                 clipboard.setPrimaryClip(clip);
 
-                Toast.makeText(getApplicationContext(),"הטקסט הועתק",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Copied to clipboard",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -121,7 +121,7 @@ public class DetailsActivity extends AppCompatActivity
                     if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-2)
                     {
                         forward_Button.setEnabled(false);
-                       forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
+                       forward_Button.setBackgroundResource(R.drawable.forward_button__unchecked_en);
                         return;
                     }
 
@@ -144,7 +144,7 @@ public class DetailsActivity extends AppCompatActivity
                 currentExcuse = newExcuse;
                 //Theres no reason to keep the backward button  disabled if the stack isnt empty:
                 backward_Button.setEnabled(true);
-                backward_Button.setBackgroundResource(R.drawable.backwards_button);
+                backward_Button.setBackgroundResource(R.drawable.backwards_button_en);
 
             }
         });
@@ -161,7 +161,7 @@ public class DetailsActivity extends AppCompatActivity
     {
         backward_Button = (ImageButton) findViewById(R.id.btn_backward);
         backward_Button.setEnabled(false);
-        backward_Button.setBackgroundResource(R.drawable.backwards_button_unchecked);
+        backward_Button.setBackgroundResource(R.drawable.backwards_button_unchecked_en);
 
         backward_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,7 +175,7 @@ public class DetailsActivity extends AppCompatActivity
                 {
                     case 1:
                         backward_Button.setEnabled(false);
-                        backward_Button.setBackgroundResource(R.drawable.backwards_button_unchecked);
+                        backward_Button.setBackgroundResource(R.drawable.backwards_button_unchecked_en);
                         break;
                     default:
                         break;
@@ -185,9 +185,9 @@ public class DetailsActivity extends AppCompatActivity
                         excusesStack.pop();
                         currentExcusesInStack.remove(currentExcuse);
                         myTextBox.setText(currentExcuse);
-                    forward_Button.setEnabled(true);
-                    forward_Button.setBackgroundResource(R.drawable.forward_button);
-                    myScrollView.setScrollY(0); myScrollView.setScrollX(0);
+                        forward_Button.setEnabled(true);
+                        forward_Button.setBackgroundResource(R.drawable.forward_button_en);
+                        myScrollView.setScrollY(0); myScrollView.setScrollX(0);
             }
         });
 
@@ -197,22 +197,22 @@ public class DetailsActivity extends AppCompatActivity
     {
         switch(cat){
             case Homework:
-                myTopLabel.setText("אני לא יכול להגיש שיעורי בית כי:");
+                myTopLabel.setText("I didnt do my homework because:");
                 break;
             case Meeting:
-                myTopLabel.setText("אני לא יכול להגיע לפגישה כי:");
+                myTopLabel.setText("I cant make it to the meeting because:");
                 break;
             case Ex:
-                myTopLabel.setText("אני לא יכול לעשות את המטלה כי:");
+                myTopLabel.setText("I cant do the chore because:");
                 break;
             case Work:
-                myTopLabel.setText("אני לא יכול להגיע לעבודה כי:");
+                myTopLabel.setText("I cant go(or I am late) to work because:");
                 break;
             case Occassion:
-                myTopLabel.setText("אני לא יכול להגיע לאירוע כי:");
+                myTopLabel.setText("I cant go(or I am late) to the event because:");
                 break;
             case Date:
-                myTopLabel.setText("אני לא יכול להגיע או אני בורח  מהדייט כי:");
+                myTopLabel.setText("I am canceling our date because:");
                 break;
             default: myTopLabel.setText("error in catagory");
         }

@@ -51,7 +51,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="אני מסכים"
+        android:text="I agree"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
-                android:text="תודה."
+                android:text="Thank you."
                 android:textColor="@android:color/holo_orange_light"
                 android:textSize="35dp"
                 android:textStyle="normal|bold|italic" />
@@ -89,7 +89,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="אנו אסירי תודה על כך שבחרתם להשתמש באפליקציה שלנו.עם זאת,אנו מסירים מעלינו כל אחריות על כל תוצאה העלולה להיגרם משימוש באפליקציה, ובפרט בתירוצים שבה. האחריות חלה על המשתמש בלבד."
+                android:text="We are grateful that you have chosen to use our app. However, we disclaim any responsibility for any consequences of the use of the app, particularly with its excuses. The responsibility applies only to the user. "
                 android:textColor="@android:color/background_dark"
                 android:textSize="20dp" />
         </LinearLayout>

@@ -5,19 +5,15 @@
         <item
             android:id="@+id/nav_add_excuse"
             android:icon="@android:drawable/ic_input_add"
-            android:title="הוסף תירוץ למאגר" />
-        <item
-            android:id="@+id/change_gender"
-            android:icon="@drawable/gendericon"
-            android:title="שנה נוסח מגדר" />
+            android:title="Suggest excuse" />
         <item
             android:id="@+id/nav_add_report"
             android:icon="@android:drawable/ic_menu_manage"
-            android:title="דווח על בעיה" />
+            android:title="Report a bug" />
         <item
             android:id="@+id/about"
             android:icon="@drawable/abouticon"
-            android:title="אודות" />
+            android:title="About" />
 
     </group>
 </menu>

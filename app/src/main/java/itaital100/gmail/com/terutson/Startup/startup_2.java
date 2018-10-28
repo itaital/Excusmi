@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import itaital100.gmail.com.terutson.Activities.MainActivity;
 import itaital100.gmail.com.terutson.R;
 import itaital100.gmail.com.terutson.Tools.Utils;
 
@@ -29,17 +30,14 @@ public class startup_2 extends AppCompatActivity {
         final TextView thanksText = findViewById(R.id.textView2);
         Utils.setGraphicsRegionTo("en", this);
         thanksText.setShadowLayer(2, 0, 0, Color.BLACK);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(   new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if (!agreeButton.isChecked()) {
-                    Utils.openConfirmDialog("יש ללחוץ על כפתור ההסכמה בכדי להמשיך", "אוקיי", this_start2_Activity);
-                } else {
-                    Intent startIntent = new Intent(getApplicationContext(), startup_3.class);
-                    //start activity://
-                    startActivity(startIntent);
-                }
-
+            public void onClick(View view)
+            {
+                Utils.commitVariable("Opened","yes");
+                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                //start activity://
+                startActivity(startIntent);
             }
         });
 
