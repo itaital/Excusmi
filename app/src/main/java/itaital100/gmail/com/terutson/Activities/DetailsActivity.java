@@ -55,7 +55,6 @@ public class DetailsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
         Utils.disableLandscapeMode(this);
         //sets graphic to be fixed the same as in the android studio editor
         setContentView(R.layout.activity_details);
