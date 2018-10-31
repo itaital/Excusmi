@@ -240,7 +240,7 @@ public class ExcusesData
                     "I worked yesterday until late and so I'll arrive a bit late today",
                     "there's a car accident, I'll probably be late",
                     "the train stopped. Its unclear why, though. I'll be late",
-                    "I have aמ appointment with the dentist",
+                    "I have an appointment with the dentist",
                     "my dog was run over",
                     "I have severe diarrhea, I'm confined to the house",
                     "the babysitter is absent, I'm looking for someone to watch over the kids",
