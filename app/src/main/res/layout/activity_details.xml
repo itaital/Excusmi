@@ -23,14 +23,14 @@
 
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView2"
-            android:layout_width="0dp"
-            android:layout_height="109dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_95sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             ads:adSize="LARGE_BANNER"
             ads:adUnitId="ca-app-pub-1773605343442692/8118351065"
             ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintHorizontal_bias="0.0"
+            ads:layout_constraintHorizontal_bias="1.0"
             ads:layout_constraintStart_toStartOf="parent"
             ads:layout_constraintTop_toTopOf="parent"></com.google.android.gms.ads.AdView>
 
@@ -105,8 +105,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:includeFontPadding="true"
             android:shadowColor="@android:color/background_dark"
             android:shadowRadius="2"
@@ -115,8 +115,9 @@
             android:textSize="@dimen/_25sdp"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.061"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adView2" />
 
         <ScrollView
             android:id="@+id/excusesScrollView"
