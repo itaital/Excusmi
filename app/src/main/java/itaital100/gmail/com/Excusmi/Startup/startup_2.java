@@ -1,5 +1,5 @@
 
-package itaital100.gmail.com.terutson.Startup;
+package itaital100.gmail.com.Excusmi.Startup;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,14 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import itaital100.gmail.com.terutson.Activities.MainActivity;
-import itaital100.gmail.com.terutson.R;
-import itaital100.gmail.com.terutson.Tools.Utils;
+import itaital100.gmail.com.Excusmi.Activities.MainActivity;
+import itaital100.gmail.com.Excusmi.R;
+import itaital100.gmail.com.Excusmi.Tools.Utils;
 
 public class startup_2 extends AppCompatActivity {
 

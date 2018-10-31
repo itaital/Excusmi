@@ -1,6 +1,6 @@
-package itaital100.gmail.com.terutson.Config;
+package itaital100.gmail.com.Excusmi.Config;
 
-import itaital100.gmail.com.terutson.Tools.Enums.*;
+import itaital100.gmail.com.Excusmi.Tools.Enums.*;
 
 public class config
 {

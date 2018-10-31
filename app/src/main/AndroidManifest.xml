@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="itaital100.gmail.com.terutson">
+    package="itaital100.gmail.com.Excusmi">
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,7 @@
             android:value="ca-app-pub-1773605343442692~2257975131" />
 
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="itaital100.gmail.com.Excusmi.Activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.DetailsActivity" />
-        <activity android:name=".Activities.Suggestion_Activity" />
-        <activity android:name=".Startup.startup_1" />
-        <activity android:name=".Startup.startup_2" />
-        <activity android:name=".Startup.startup_3" />
-        <activity android:name=".Activities.Report_Activity"></activity>
+        <activity android:name="itaital100.gmail.com.Excusmi.Activities.DetailsActivity" />
+        <activity android:name="itaital100.gmail.com.Excusmi.Activities.Suggestion_Activity" />
+        <activity android:name="itaital100.gmail.com.Excusmi.Startup.startup_1" />
+        <activity android:name="itaital100.gmail.com.Excusmi.Startup.startup_2" />
+        <activity android:name="itaital100.gmail.com.Excusmi.Startup.startup_3" />
+        <activity android:name="itaital100.gmail.com.Excusmi.Activities.Report_Activity"></activity>
     </application>
 
 </manifest>

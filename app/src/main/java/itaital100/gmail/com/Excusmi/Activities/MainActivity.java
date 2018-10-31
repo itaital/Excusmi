@@ -1,11 +1,10 @@
-package itaital100.gmail.com.terutson.Activities;
+package itaital100.gmail.com.Excusmi.Activities;
 
 ///Android imports:
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -19,11 +18,11 @@ import com.google.android.gms.ads.MobileAds;
 
 
 //Terutson imports:
-import itaital100.gmail.com.terutson.Config.config;
-import itaital100.gmail.com.terutson.R;
-import itaital100.gmail.com.terutson.Startup.startup_1;
-import itaital100.gmail.com.terutson.Tools.Utils;
-import itaital100.gmail.com.terutson.Tools.Enums.*;
+import itaital100.gmail.com.Excusmi.Config.config;
+import itaital100.gmail.com.Excusmi.R;
+import itaital100.gmail.com.Excusmi.Startup.startup_1;
+import itaital100.gmail.com.Excusmi.Tools.Utils;
+import itaital100.gmail.com.Excusmi.Tools.Enums.*;
 
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener

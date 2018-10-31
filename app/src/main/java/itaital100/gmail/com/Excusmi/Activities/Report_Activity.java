@@ -1,4 +1,4 @@
-package itaital100.gmail.com.terutson.Activities;
+package itaital100.gmail.com.Excusmi.Activities;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,26 +8,20 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import java.util.List;
 
-import itaital100.gmail.com.terutson.R;
-import itaital100.gmail.com.terutson.Tools.Utils;
+import itaital100.gmail.com.Excusmi.R;
+import itaital100.gmail.com.Excusmi.Tools.Utils;
+
+public class Report_Activity extends AppCompatActivity {
 
 
-public class Suggestion_Activity extends AppCompatActivity
-{
-
-    //ComboBox items:
-    String[] items = {"Work", "Meeting", "Date escape", "Chore", "Homework", "Event"};
-    Spinner myComboBox;
     //email:
     Button btn_sendEmail;
     EditText myEditBox;
@@ -41,14 +35,14 @@ public class Suggestion_Activity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         Utils.disableLandscapeMode(this);
-        setContentView(R.layout.activity_suggestion);
+        setContentView(R.layout.activity_report_);
         mAdView = (AdView) findViewById(R.id.adView1);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         Utils.setGraphicsRegionTo("eng",this);
+        System.out.println("debug: .xml loaded");
         //init all components:
         init_editBox();
-        init_ComboBox();
         init_SendButton();
 
 
@@ -76,36 +70,23 @@ public class Suggestion_Activity extends AppCompatActivity
         });
     }
     //----------------------------------------------------------------------------------------------
-    void init_ComboBox()
-    {
-        //get the spinner from the xml.
-        myComboBox = findViewById(R.id.spinner);
-        //create an adapter to describe how the items are displayed, adapters
-        // are used in several places in android.
-        //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        //set the spinners adapter to the previously created one.
-        myComboBox.setAdapter(adapter);
-    }
-    //----------------------------------------------------------------------------------------------
     protected void sendEmail() {
         if(myEditBox.length() ==0)
         {
-            Utils.openConfirmDialog("Please enter an excuse first","Okay",this);
+            Utils.openConfirmDialog("Please enter an issue first","Okay",this);
             return;
         }
         else
         {
-            String comboTxt = myComboBox.getSelectedItem().toString();
             String SmyEditBox = myEditBox.getText().toString();
             String[] email_AddressToSend = {"terutson@gmail.com"};
-            String email_subject = "Hey Excusmi support, Check out my great Excuse ! " ;
-            String email_content = "Suggestion:" + "\n" + "Category: " + comboTxt +"\n" + SmyEditBox;
+            String email_subject = "Hey Excusmi support, heres a small issue... " ;
+            String email_content = "The issue:" + "\n"  + SmyEditBox;
 
             shareToGMail(email_AddressToSend,
-                         email_subject,
-                         email_content
-                    );
+                    email_subject,
+                    email_content
+            );
         }
 
     }

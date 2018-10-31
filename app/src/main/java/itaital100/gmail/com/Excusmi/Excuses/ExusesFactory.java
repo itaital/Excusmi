@@ -1,7 +1,7 @@
-package itaital100.gmail.com.terutson.Excuses;
+package itaital100.gmail.com.Excusmi.Excuses;
 import java.util.Random;
-import itaital100.gmail.com.terutson.Tools.Enums.*;
-import itaital100.gmail.com.terutson.Config.config;
+import itaital100.gmail.com.Excusmi.Tools.Enums.*;
+import itaital100.gmail.com.Excusmi.Config.config;
 
 public class ExusesFactory
 {

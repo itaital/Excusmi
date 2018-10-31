@@ -1,4 +1,4 @@
-package itaital100.gmail.com.terutson.Tools;
+package itaital100.gmail.com.Excusmi.Tools;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -12,11 +12,10 @@ import android.widget.RadioButton;
 
 import java.util.Locale;
 
-import itaital100.gmail.com.terutson.Activities.MainActivity;
-import itaital100.gmail.com.terutson.Excuses.ExusesFactory;
-import itaital100.gmail.com.terutson.R;
-import itaital100.gmail.com.terutson.Tools.Enums.*;
-import itaital100.gmail.com.terutson.Config.config;
+import itaital100.gmail.com.Excusmi.Activities.MainActivity;
+import itaital100.gmail.com.Excusmi.R;
+import itaital100.gmail.com.Excusmi.Tools.Enums.*;
+import itaital100.gmail.com.Excusmi.Config.config;
 
 
 

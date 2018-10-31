@@ -1,12 +1,9 @@
-package itaital100.gmail.com.terutson.Activities;
+package itaital100.gmail.com.Excusmi.Activities;
 
 import android.content.ClipData;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.MovementMethod;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,10 +19,10 @@ import java.util.Stack;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import itaital100.gmail.com.terutson.Excuses.ExusesFactory;
-import itaital100.gmail.com.terutson.Tools.Enums.*;
-import itaital100.gmail.com.terutson.R;
-import itaital100.gmail.com.terutson.Tools.Utils;
+import itaital100.gmail.com.Excusmi.Excuses.ExusesFactory;
+import itaital100.gmail.com.Excusmi.Tools.Enums.*;
+import itaital100.gmail.com.Excusmi.R;
+import itaital100.gmail.com.Excusmi.Tools.Utils;
 
 
 public class DetailsActivity extends AppCompatActivity
