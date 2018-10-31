@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-1773605343442692~2257975131" />
 
         <activity
             android:name=".Activities.MainActivity"

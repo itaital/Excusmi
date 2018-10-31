@@ -24,13 +24,13 @@
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView2"
             android:layout_width="0dp"
-            android:layout_height="105dp"
+            android:layout_height="109dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             ads:adSize="LARGE_BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            ads:adUnitId="ca-app-pub-1773605343442692/8118351065"
             ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintHorizontal_bias="1.0"
+            ads:layout_constraintHorizontal_bias="0.0"
             ads:layout_constraintStart_toStartOf="parent"
             ads:layout_constraintTop_toTopOf="parent"></com.google.android.gms.ads.AdView>
 
@@ -104,9 +104,9 @@
             android:id="@+id/topLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:includeFontPadding="true"
             android:shadowColor="@android:color/background_dark"
             android:shadowRadius="2"
@@ -115,23 +115,19 @@
             android:textSize="@dimen/_25sdp"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/adView2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ScrollView
             android:id="@+id/excusesScrollView"
             android:layout_width="@dimen/_260sdp"
             android:layout_height="@dimen/_110sdp"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.722"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="@+id/textView">
+            app:layout_constraintStart_toStartOf="@+id/textView">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -142,12 +138,12 @@
                     android:id="@+id/txt_teruson"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:scrollbars="vertical"
                     android:shadowColor="?attr/colorButtonNormal"
                     android:shadowRadius="1"
                     android:text="some ecuse"
                     android:textColor="#000000"
-                    android:layout_gravity="left"
                     android:textSize="@dimen/_25sdp"
                     android:textStyle="normal"
                     android:typeface="serif" />
