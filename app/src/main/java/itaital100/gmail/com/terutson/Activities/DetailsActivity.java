@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.MovementMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.content.ClipboardManager;
 import android.widget.Toast;
@@ -39,12 +41,14 @@ public class DetailsActivity extends AppCompatActivity
 
     //Components:
         TextView myTextBox;
-        TextView myTextBox2;
-    TextView myTopLabel;
+        ScrollView myScrollView;
+        TextView myTopLabel;
         Button copy_Button;
         ImageButton forward_Button;
         ImageButton backward_Button;
         AdView mAdView;
+
+
 
 
     @Override
@@ -76,11 +80,10 @@ public class DetailsActivity extends AppCompatActivity
     //-------------------------------------------------------------------------------------
     private void initExcuseTextBox()
     {
+        myScrollView = (ScrollView) findViewById(R.id.excusesScrollView);
         myTextBox = (TextView) findViewById(R.id.txt_teruson);
-        myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
         currentExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
         myTextBox.setText(currentExcuse);
-
     }
     //-----------------------------------------------------------------------
       /*
@@ -116,7 +119,7 @@ public class DetailsActivity extends AppCompatActivity
                 //generate new Excuse
                     String newExcuse = "";
 
-                    if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-1)
+                    if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-2)
                     {
                         forward_Button.setEnabled(false);
                        forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
@@ -136,16 +139,13 @@ public class DetailsActivity extends AppCompatActivity
                         excusesStack.push(currentExcuse);
                         currentExcusesInStack.add(currentExcuse);
                     //}
-                myTextBox.clearAnimation();
-                myTextBox.setMovementMethod(new ScrollingMovementMethod());//renable scroll down without scrollview
+                //reset scroll view
+                myScrollView.setScrollY(0);   myScrollView.setScrollX(0);
                 myTextBox.setText(newExcuse);
                 currentExcuse = newExcuse;
                 //Theres no reason to keep the backward button  disabled if the stack isnt empty:
                 backward_Button.setEnabled(true);
                 backward_Button.setBackgroundResource(R.drawable.backwards_button);
-                myTextBox.setMovementMethod(null);
-
-                myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
 
             }
         });
@@ -154,6 +154,9 @@ public class DetailsActivity extends AppCompatActivity
     {
         super.onBackPressed();
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        myScrollView.setScrollY(0);   myScrollView.setScrollX(0);
+
+
     }
     private void initBackwardButton()
     {
@@ -185,13 +188,10 @@ public class DetailsActivity extends AppCompatActivity
                         myTextBox.setText(currentExcuse);
                     forward_Button.setEnabled(true);
                     forward_Button.setBackgroundResource(R.drawable.forward_button);
-                myTextBox.setMovementMethod(null);
-
-                myTextBox.setMovementMethod(new ScrollingMovementMethod());//enable scroll down without scrollview
-
-
+                    myScrollView.setScrollY(0); myScrollView.setScrollX(0);
             }
         });
+
     }
 
     private void initLable(Category cat)
@@ -213,7 +213,7 @@ public class DetailsActivity extends AppCompatActivity
                 myTopLabel.setText("אני לא יכול להגיע לאירוע כי:");
                 break;
             case Date:
-                myTopLabel.setText("אני לא יכול להגיע לדייט כי:");
+                myTopLabel.setText("אני לא יכול להגיע או אני בורח  מהדייט כי:");
                 break;
             default: myTopLabel.setText("error in catagory");
         }
