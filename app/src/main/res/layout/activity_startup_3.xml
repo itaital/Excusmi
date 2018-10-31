@@ -83,8 +83,11 @@
             android:layout_weight="1"
             android:checked="true"
             android:drawableRight="@drawable/male_icon"
+            android:shadowColor="@android:color/background_dark"
+            android:shadowRadius="1"
             android:text="זכר"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="0dp"
@@ -99,8 +102,11 @@
             android:layout_weight="1"
             android:checked="false"
             android:drawableRight="@drawable/female_icon"
+            android:shadowColor="@android:color/background_dark"
+            android:shadowRadius="1"
             android:text="נקבה"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <TextView

@@ -31,22 +31,22 @@ import itaital100.gmail.com.terutson.Tools.Utils;
 public class DetailsActivity extends AppCompatActivity
 {
     //Vars:
-        Category  ActivityCategory;
-        public int    currentExcuseIndex = -1;
-        String        currentExcuse;
-        ExusesFactory myExcuseFactory = new ExusesFactory();
-        HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
-        Stack excusesStack = new Stack();
-        ArrayList<Integer> index = new ArrayList<Integer>();
+    Category  ActivityCategory;
+    public int    currentExcuseIndex = -1;
+    String        currentExcuse;
+    ExusesFactory myExcuseFactory = new ExusesFactory();
+    HashSet<String> currentExcusesInStack = new HashSet<String>(); // to avoid duplicates
+    Stack excusesStack = new Stack();
+    ArrayList<Integer> index = new ArrayList<Integer>();
 
     //Components:
-        TextView myTextBox;
-        ScrollView myScrollView;
-        TextView myTopLabel;
-        Button copy_Button;
-        ImageButton forward_Button;
-        ImageButton backward_Button;
-        AdView mAdView;
+    TextView myTextBox;
+    ScrollView myScrollView;
+    TextView myTopLabel;
+    Button copy_Button;
+    ImageButton forward_Button;
+    ImageButton backward_Button;
+    AdView mAdView;
 
 
 
@@ -70,11 +70,11 @@ public class DetailsActivity extends AppCompatActivity
         for(int i=0; i< ExusesFactory.getCategorySize(ActivityCategory); i++){index.add(i);}
 
         //init components:
-            initExcuseTextBox();
-            initCopyButton();
-            initForwardButton();
-            initBackwardButton();
-            initLable(ActivityCategory);
+        initExcuseTextBox();
+        initCopyButton();
+        initForwardButton();
+        initBackwardButton();
+        initLable(ActivityCategory);
 
     }
     //-------------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ public class DetailsActivity extends AppCompatActivity
             }
         });
     }
-//-------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------
      /*
            show next excuse that is different then the previous
        */
@@ -117,28 +117,28 @@ public class DetailsActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 //generate new Excuse
-                    String newExcuse = "";
+                String newExcuse = "";
 
-                    if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-2)
-                    {
-                        forward_Button.setEnabled(false);
-                       forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
-                        return;
-                    }
+                if(excusesStack.size()==ExusesFactory.getCategorySize(ActivityCategory)-2)
+                {
+                    forward_Button.setEnabled(false);
+                    forward_Button.setBackgroundResource(R.drawable.forward_button_unchecked);
+                    return;
+                }
 
-                     do
-                     {
-                         newExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
-                     }
-                     while(currentExcuse == newExcuse || excusesStack.search(newExcuse) != -1);
+                do
+                {
+                    newExcuse = myExcuseFactory.generateNewExcuse(ActivityCategory,currentExcuseIndex);
+                }
+                while(currentExcuse == newExcuse || excusesStack.search(newExcuse) != -1);
 
-                     //push to stack while preventing duplicates:
-                   //  if( !currentExcusesInStack.contains(currentExcuse) )
+                //push to stack while preventing duplicates:
+                //  if( !currentExcusesInStack.contains(currentExcuse) )
                 // {
-                        //After we got the new Excuse:
-                        excusesStack.push(currentExcuse);
-                        currentExcusesInStack.add(currentExcuse);
-                    //}
+                //After we got the new Excuse:
+                excusesStack.push(currentExcuse);
+                currentExcusesInStack.add(currentExcuse);
+                //}
                 //reset scroll view
                 myScrollView.setScrollY(0);   myScrollView.setScrollX(0);
                 myTextBox.setText(newExcuse);
@@ -182,13 +182,13 @@ public class DetailsActivity extends AppCompatActivity
                         break;
                 }
                 //backward the excuse:
-                        currentExcuse = (String)excusesStack.peek();
-                        excusesStack.pop();
-                        currentExcusesInStack.remove(currentExcuse);
-                        myTextBox.setText(currentExcuse);
-                    forward_Button.setEnabled(true);
-                    forward_Button.setBackgroundResource(R.drawable.forward_button);
-                    myScrollView.setScrollY(0); myScrollView.setScrollX(0);
+                currentExcuse = (String)excusesStack.peek();
+                excusesStack.pop();
+                currentExcusesInStack.remove(currentExcuse);
+                myTextBox.setText(currentExcuse);
+                forward_Button.setEnabled(true);
+                forward_Button.setBackgroundResource(R.drawable.forward_button);
+                myScrollView.setScrollY(0); myScrollView.setScrollX(0);
             }
         });
 
@@ -218,39 +218,39 @@ public class DetailsActivity extends AppCompatActivity
             default: myTopLabel.setText("error in catagory");
         }
     }
-//-------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------
     /*
         Checks if this activity got any messege about the type of the category that it is meant for.
         Output: if messege is valid -> returns the category type
                 else                -> returns null;
      */
-private Category getExcuseCategoryType()
-{
-    if(getIntent().hasExtra("hw"))
+    private Category getExcuseCategoryType()
     {
-        return Category.Homework;
-    }
-    if(getIntent().hasExtra("meeting"))
-    {
-        return Category.Meeting;
-    }
-    if(getIntent().hasExtra("ex"))
-    {
-        return Category.Ex;
-    }
-    if(getIntent().hasExtra("work"))
-    {
-        return Category.Work;
-    }
-    if(getIntent().hasExtra("occasion"))
-    {
-        return Category.Occassion;
-    }
-    if(getIntent().hasExtra("date"))
-    {
-        return Category.Date;
-    }
-    return null;
+        if(getIntent().hasExtra("hw"))
+        {
+            return Category.Homework;
+        }
+        if(getIntent().hasExtra("meeting"))
+        {
+            return Category.Meeting;
+        }
+        if(getIntent().hasExtra("ex"))
+        {
+            return Category.Ex;
+        }
+        if(getIntent().hasExtra("work"))
+        {
+            return Category.Work;
+        }
+        if(getIntent().hasExtra("occasion"))
+        {
+            return Category.Occassion;
+        }
+        if(getIntent().hasExtra("date"))
+        {
+            return Category.Date;
+        }
+        return null;
     }
 }

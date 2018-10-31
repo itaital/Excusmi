@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         setContentView(R.layout.activity_main);
         Utils.setGraphicsRegionTo("eng",this);
         //initialize:
+            init_Ads();
             init_pref();
             init_gender();
-            init_Ads();
             init_GraphicOriention();
             init_Categories();
             init_Menu();
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
     //----------------------------------------------------------------------------------------------
     private void init_Ads()
     {
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this, "ca-app-pub-1773605343442692~2257975131");
     }
     //----------------------------------------------------------------------------------------------
     /*
