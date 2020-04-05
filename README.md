@@ -1,4 +1,6 @@
 # Excusmi
+![Screenshot](https://i.imgur.com/1QYGNkB.png)
+
 Excusmi will provide you with the best excuses for a wide variety of situations from everyday life.
 We have carefully chosen the best excuses for your personal use.
 
